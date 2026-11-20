@@ -1,0 +1,13 @@
+# Local data, downloaded models and outputs never belong in this repository
+/data/
+/runs/
+/compare_models/
+*.gguf
+*.safetensors
+*.pt
+*.pth
+*.onnx
+*.bin
+*.tflite
+__pycache__/
+.DS_Store

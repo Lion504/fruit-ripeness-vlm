@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use these add-ons or this code, please cite it as below."
+title: "Fruit ripeness add-ons for Qwen3.5-0.8B"
+type: software
+authors:
+  - alias: Lion504
+license: Apache-2.0
+repository-code: "https://github.com/Lion504/fruit-ripeness-vlm"
+url: "https://huggingface.co/timo6677/qwen3.5-0.8b-fruit-ripeness-lora"
+date-released: "2026-11-20"
+keywords:
+  - fruit ripeness
+  - vision-language model
+  - LoRA
+  - llama.cpp
+  - banana
+  - apple
+  - tomato
