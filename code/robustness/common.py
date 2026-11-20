@@ -1,8 +1,8 @@
 """Shared data loading and metrics for the ripeness classifier experiments.
 
 Environment variables (see README.md):
-  RIPEWISE_TRAINING_DIR  data and output root, default <repo>/models/training
-  RIPEWISE_BANANA_DATASET  the BananaImageBD folder, default the folder of that name at the repo root
+  RIPENESS_TRAINING_DIR  data and output root, default <repo>/models/training
+  RIPENESS_BANANA_DATASET  the BananaImageBD folder, default the folder of that name at the repo root
 """
 
 import os
@@ -16,9 +16,9 @@ from sklearn.metrics import confusion_matrix, f1_score
 BANANA_NAME = "BananaImageBD A Comprehensive Image Dataset of Common Banana Varieties with Different Ripeness Stages in Bangladesh"
 REPO_ROOT = Path(__file__).resolve().parents[2]
 TRAINING_DIR = Path(
-    os.environ.get("RIPEWISE_TRAINING_DIR") or REPO_ROOT / "models" / "training"
+    os.environ.get("RIPENESS_TRAINING_DIR") or REPO_ROOT / "models" / "training"
 )
-_banana = os.environ.get("RIPEWISE_BANANA_DATASET") or BANANA_NAME
+_banana = os.environ.get("RIPENESS_BANANA_DATASET") or BANANA_NAME
 BANANA_DATASET = Path(_banana) if Path(_banana).is_absolute() else REPO_ROOT / _banana
 
 SPLITS_CSV = str(TRAINING_DIR / "splits.csv")

@@ -7,7 +7,7 @@ import time
 from PIL import Image
 from produce_common import prep_image
 
-PASS1_PROMPT = """You are the first step of the RipeWise produce scanner.
+PASS1_PROMPT = """You are the first step of a produce scanner.
 Look at the photo and say which produce item it shows.
 Answer with a single JSON object: {"produce": "banana" | "apple" | "tomato" | "none" | "unclear"}
 - banana, apple or tomato: the photo clearly shows that fruit.
@@ -44,7 +44,7 @@ STAGE_DESC = {
 
 
 def stage_prompt(fruit):
-    return f"""You are the ripeness step of the RipeWise produce scanner. The photo shows a {fruit}.
+    return f"""You are the ripeness step of a produce scanner. The photo shows a {fruit}.
 {STAGE_DESC[fruit]}
 If the photo is too blurry or dark to judge, answer 'unclear'.
 Answer with a single JSON object: {{"stage": {" | ".join(repr(x).replace("'", '"') for x in STAGE_ENUM[fruit])}}}

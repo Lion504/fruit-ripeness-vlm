@@ -2,10 +2,10 @@
 
 - `predict.py MODEL TESTSET OUT.jsonl`: runs one public model over one test set
   with that model's own preprocessing and saves its raw predictions.
-- `compare_with_ours.py PREDS_DIR TWO_PASS_RESULTS.jsonl OUT.csv`: maps each
-  model's labels to ours (for 3-stage models our "turning" is merged the same
-  way for both models) and runs an exact McNemar test against our two-pass
-  answers on the same photos. Its output is `results/public_models_vs_ours.csv`.
+- `compare_public_models.py PREDS_DIR TWO_PASS_RESULTS.jsonl OUT.csv`: maps each
+  model's labels to the model's own (for 3-stage models "turning" is merged the same
+  way for both models) and runs an exact McNemar test against the two-pass
+  answers on the same photos. Its output is `results/public_models_vs_this_model.csv`.
 
 Paths: `COMPARE_MODELS_DIR` (downloaded models, one folder per model named
 `<owner>__<name>`), `TEST_LISTS_DIR` (robustness and ParsaVictor test lists),

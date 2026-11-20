@@ -15,7 +15,7 @@ PRODUCES = list(STAGES)
 CONDITIONS = ["no_obvious_defects", "minor_defects", "major_defects", "possible_decay"]
 TOMATO_MAP = {"green": "not_yet", "half-ripe": "not_yet", "fully-ripe": "ready"}
 
-PROMPT = """You are an expert produce quality and ripeness assessor for RipeWise.
+PROMPT = """You are an expert produce quality and ripeness assessor.
 Your task is to analyze the provided produce photo and produce an accurate visual assessment.
 
 Guidelines:

@@ -8,7 +8,7 @@ PER_BOX=1: at most one crop per tomato (photo + box index) instead of one per ph
   (the same mapping used to score their test).
 - Their train split holds Roboflow copies of one photo (rotated, flipped). Crops are grouped by source photo
   (name before the '_<ext>.rf.' part, with rotation / flip tags removed) and at most one crop per photo is taken.
-- Near-copy check: a 64-bit difference hash of every picked crop is compared with every crop of our tomato
+- Near-copy check: a 64-bit difference hash of every picked crop is compared with every crop of the tomato
   val and test, ParsaVictor's test, and the 300-crop ParsaVictor val sample. Picked crops within 6 bits of any
   of them are dropped and counted.
 Writes OUT_DIR/<class>/<name>.jpg, OUT_DIR/extra_train.csv (path,label,their_class) and OUT_DIR/build_report.json.

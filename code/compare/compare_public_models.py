@@ -1,11 +1,11 @@
-"""Paired comparison of every public model with our two-pass answers on the same photos.
+"""Paired comparison of every public model with this model's two-pass answers on the same photos.
 
-usage: compare_with_ours.py PREDS_DIR TWO_PASS_RESULTS.jsonl OUT.csv
+usage: compare_public_models.py PREDS_DIR TWO_PASS_RESULTS.jsonl OUT.csv
 PREDS_DIR holds <model>__<testset>.jsonl from predict.py; TWO_PASS_RESULTS is results.jsonl from
 code/eval/two_pass_v7.py. Photos are matched by path, so both must come from the same machine.
 
-Ours is right only if pass 1 names the right fruit AND the routed stage is right (for fruit naming: pass 1 only).
-Where a public model has fewer stages, our "turning" label is merged the same way for both models.
+This model is right only if pass 1 names the right fruit AND the routed stage is right (for fruit naming: pass 1 only).
+Where a public model has fewer stages, the "turning" label is merged the same way for both models.
 For each row: accuracy of both with 95% Wilson ranges, the discordant counts and an exact two-sided McNemar p.
 """
 
@@ -29,7 +29,7 @@ OURS_SET = {"banana": "banana_test", "frame_small": "frame_small", "frame_cut": 
             "apple": "apple_test", "tomato": "tomato_test", "parsa_test": "tomato_parsa_test",
             "parsa_tomato_test": "tomato_parsa_test"}
 
-# (public model id, preds key, test sets, label map, merges of our "turning", note)
+# (public model id, preds key, test sets, label map, merges of the "turning" label, note)
 RUNS = [
     ("Carlosmg23/fruit-ripeness-final", "carlos", ["banana"], CARLOS_BANANA, [None, "unripe", "ripe"],
      "3 banana stages; other classes count as wrong"),
@@ -65,10 +65,10 @@ def mcnemar(b, c):
 
 
 def main(preds_dir, results, out_csv):
-    ours = {}
+    model_answers = {}
     for line in open(results):
         d = json.loads(line)
-        ours[(d["set"], d["path"])] = d
+        model_answers[(d["set"], d["path"])] = d
     rows = []
 
     def add(model, test, merge, pairs, note):
@@ -81,8 +81,8 @@ def main(preds_dir, results, out_csv):
         ol, oh = wilson(o, n)
         rows.append(dict(model=model, test=test, turning_merged_into=merge or "", n=n,
                          theirs_correct=t, theirs_acc=round(t / n, 4), theirs_lo=round(tl, 4), theirs_hi=round(th, 4),
-                         ours_correct=o, ours_acc=round(o / n, 4), ours_lo=round(ol, 4), ours_hi=round(oh, 4),
-                         only_ours_right=only_o, only_theirs_right=only_t,
+                         this_model_correct=o, this_model_acc=round(o / n, 4), this_model_lo=round(ol, 4), this_model_hi=round(oh, 4),
+                         only_this_model_right=only_o, only_theirs_right=only_t,
                          both_right=sum(a and b for a, b in pairs), both_wrong=sum(not a and not b for a, b in pairs),
                          mcnemar_p=f"{mcnemar(only_o, only_t):.2g}", note=note))
 
@@ -98,25 +98,25 @@ def main(preds_dir, results, out_csv):
                         if lab == "rotten":
                             continue
                         lab = PARSA[lab]
-                    o = ours[(OURS_SET[test], r["path"])]
-                    our = o.get("stage_routed") if o.get("pass1") == o["fruit"] else None
+                    o = model_answers[(OURS_SET[test], r["path"])]
+                    this_answer = o.get("stage_routed") if o.get("pass1") == o["fruit"] else None
                     their = m.get(r["raw"])
                     if merge:
-                        lab, our, their = (merge if x == "turning" else x for x in (lab, our, their))
-                    pairs.append((their == lab, our == lab))
+                        lab, this_answer, their = (merge if x == "turning" else x for x in (lab, this_answer, their))
+                    pairs.append((their == lab, this_answer == lab))
                 add(model, test.replace("parsa_tomato_test", "parsa_test"), merge, pairs, note)
     for fruit in ("banana", "apple", "tomato"):
         preds = [json.loads(line) for line in open(Path(preds_dir) / f"dima806__{fruit}.jsonl")]
-        pairs = [(r["raw"] == fruit, ours[(OURS_SET[fruit], r["path"])].get("pass1") == fruit) for r in preds]
+        pairs = [(r["raw"] == fruit, model_answers[(OURS_SET[fruit], r["path"])].get("pass1") == fruit) for r in preds]
         add("dima806/fruit_vegetable_image_detection", f"fruit_naming_{fruit}", None, pairs,
-            "fruit name only; ours = pass 1")
+            "fruit name only; this model = pass 1")
     with open(out_csv, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))
         w.writeheader()
         w.writerows(rows)
     for r in rows:
         print(f"{r['model'][:34]:34s} {r['test']:22s} {r['turning_merged_into']:7s} n={r['n']:4d} "
-              f"theirs={r['theirs_acc']:.3f} ours={r['ours_acc']:.3f} {r['only_ours_right']}/{r['only_theirs_right']} "
+              f"theirs={r['theirs_acc']:.3f} this={r['this_model_acc']:.3f} {r['only_this_model_right']}/{r['only_theirs_right']} "
               f"p={r['mcnemar_p']}")
 
 

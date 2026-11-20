@@ -1,7 +1,7 @@
 """Shared LoRA stage trainer (v6): one adapter per fruit on the language layers, vision frozen.
 
 usage: train_lora_v6.py FRUIT            FRUIT = banana | apple | tomato | pass1 (pass1: classes banana/apple/tomato/none/unclear)
-env:   RIPEWISE_TRAINING_DIR, RIPEWISE_BANANA_DATASET, RIPEWISE_QWEN_BASE, HF_HOME (paths, see paths.py); device = cuda if available else mps (bf16 either way)
+env:   RIPENESS_TRAINING_DIR, RIPENESS_BANANA_DATASET, RIPENESS_QWEN_BASE, HF_HOME (paths, see paths.py); device = cuda if available else mps (bf16 either way)
        EPOCHS=8  LR=1e-4  RANK=16  ACC=8 (samples per optimizer step)  WARM=40 (optimizer steps)  LOG_EVERY=10 (optimizer steps)
        LOWRES=1 (round 31: small-in-frame pasting and low-resolution round trips in the augmentation)
        EXTRA_TRAIN=<csv> (round 32: extra train crops, columns path,label, added to the fruit's own train rows;

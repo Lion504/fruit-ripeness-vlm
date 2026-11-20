@@ -94,7 +94,7 @@
    "earlier_choice_epoch": 4
   },
   "r31_tomato": {
-   "rule": "best mean(our val macro F1, val_parsa macro F1)",
+   "rule": "best mean(OpenField-BD tomato val macro F1, val_parsa macro F1)",
    "chosen": "r31-tomato-ep5",
    "epoch": 5,
    "round": "r31",
@@ -116,7 +116,7 @@
    "earlier_choice_epoch": 5
   },
   "r32_tomato": {
-   "rule": "best mean(our val macro F1, val_parsa macro F1)",
+   "rule": "best mean(OpenField-BD tomato val macro F1, val_parsa macro F1)",
    "chosen": "r32-tomato-ep6",
    "epoch": 6,
    "round": "r32",
@@ -210,7 +210,7 @@
    }
   },
   "tomato": {
-   "rule": "best mean(our val macro F1, val_parsa macro F1) over r31/r32 epochs + round29",
+   "rule": "best mean(OpenField-BD tomato val macro F1, val_parsa macro F1) over r31/r32 epochs + round29",
    "chosen": "r32-tomato-ep6",
    "epoch": 6,
    "round": "r32",

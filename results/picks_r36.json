@@ -1,6 +1,6 @@
 {
  "note": "round 36 tomato add-on; clean scoring (cache_prompt false, full adapter list); chosen on validation only, before any test was run; tie window 0.002 -> earlier epoch",
- "rule": "best mean(our tomato val macro F1 [416], ParsaVictor val1000 macro F1 [1000])",
+ "rule": "best mean(OpenField-BD tomato val macro F1 [416], ParsaVictor val1000 macro F1 [1000])",
  "chosen": "r36-tomato-ep4",
  "epoch": 4,
  "score": 0.9058,

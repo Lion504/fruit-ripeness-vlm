@@ -25,7 +25,7 @@ STAGES = {
     "apple": ["immature", "semi-mature", "mature"],
     "tomato": ["not_yet", "ready"],
     # merged label sets for comparing with public models that have fewer stages
-    "banana3": ["unripe", "ripe", "overripe"],  # our 'turning' merged into unripe or ripe (say which in the note)
+    "banana3": ["unripe", "ripe", "overripe"],  # the 'turning' label merged into unripe or ripe (say which in the note)
     "apple2": ["immature", "mature"],  # semi-mature photos left out
 }
 FIELDS = [

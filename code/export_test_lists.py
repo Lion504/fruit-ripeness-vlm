@@ -1,9 +1,9 @@
-"""Export the test lists and our per-photo answers with paths relative to each public dataset.
+"""Export the test lists and per-photo answers with paths relative to each public dataset.
 
 usage: export_test_lists.py E2E_RESULTS.jsonl OUT_DIR
 Reads the banana split file (BANANA_SPLITS), the apple / tomato crop lists (CROPS/<fruit>/test.csv), the
 ParsaVictor test list and the robustness lists, and the two-pass answers (two_pass_v7.py results.jsonl).
-Writes OUT_DIR/test_<set>.csv (dataset, file, box, label, sha256 of the photo we scored where known) and
+Writes OUT_DIR/test_<set>.csv (dataset, file, box, label, sha256 of the photo scored where known) and
 OUT_DIR/answers_two_pass.csv (set, dataset, file, box, label, pass1, stage) and OUT_DIR/test_negatives.csv
 (the photos without a supported fruit, which are not published: number, description, expected answer, SHA256).
 No absolute paths are written.

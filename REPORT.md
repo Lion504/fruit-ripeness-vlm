@@ -5,15 +5,15 @@
 Four LoRA add-ons, 12-24 MB each, turn Qwen3.5-0.8B into a ripeness grader
 for banana (4 stages), apple (3 stages) and tomato (2 stages). The first add-on
 names the fruit; the second grades it. On held-out test photos from six public
-datasets the two-pass system reaches 81.7% on banana, 94.7% on apple, 93.3% on
-field tomatoes and 88.8% on conveyor-belt tomato crops, and names the fruit
-correctly on 99.6% of 2,210 photos. Without the add-ons, the same model scores
+datasets the two-pass system reaches 81.4% on banana, 94.7% on apple, 93.3% on
+field tomatoes and 88.6% on conveyor-belt tomato crops, and names the fruit
+correctly on 99.5% of 2,210 photos. Without the add-ons, the same model scores
 31.8%, 45.4%, 81.1% and 57.0%.
 
-We ran all 9 public fruit ripeness models we could find with downloadable
+I ran all 9 public fruit ripeness models I could find with downloadable
 weights on the same photos. The add-ons are significantly more accurate than
 each of them (exact paired McNemar test), with one exception: on ParsaVictor's
-own tomato test set the two models are level (88.8% vs 88.6%, p = 1.0).
+own tomato test set the two models are level (88.6% each, p = 1.0).
 
 ## 1. Why a small vision-language model
 
@@ -67,6 +67,10 @@ no choice was made on a test set.
   are trained as "unclear".
 - **Answers** are forced into a JSON schema (`{"stage": ...}` with an enum),
   temperature 0, thinking off.
+- **Prompts:** the add-ons were trained with a first prompt sentence a few
+  words longer than the published one. The final results below use the
+  published prompts; compared with the training wording, 11 of 2,301 test
+  answers changed, none of the differences significant.
 
 ## 4. Evaluation protocol
 
@@ -81,10 +85,10 @@ no choice was made on a test set.
   matrix, counts of "unclear" and invalid answers.
 - Comparisons on the same photos use the exact two-sided McNemar test.
 - Public models were run with their own preprocessing; labels were mapped to
-  ours, and where a model has fewer stages our labels and answers were merged
+  mine, and where a model has fewer stages my labels and answers were merged
   the same way.
 
-### A scoring fault we found and fixed
+### A scoring fault I found and fixed
 
 Scoring the same add-on file twice gave different answers (up to 16 of 447).
 The cause: llama-server keeps the computed start of the prompt (the system
@@ -97,7 +101,7 @@ again, and all numbers in this report are from the fixed scoring.
 
 ## 5. Results
 
-### Round by round (clean scoring, test sets)
+### Round by round (clean scoring, test sets, stage add-on with the true fruit, training prompts)
 
 | Round | Change | Banana 447 | Banana small in frame | Tomato 418 | Tomato ParsaVictor 721 |
 | --- | --- | --- | --- | --- | --- |
@@ -124,47 +128,47 @@ on both validation sets, kept most of the gain and fixed small bananas. On the
 
 | Test set | Photos | Accuracy | Macro F1 | MAE | Kappa |
 | --- | --- | --- | --- | --- | --- |
-| Banana | 447 | 81.7% [77.8-85.0] | 0.811 [0.777-0.845] | 0.19 | 0.90 |
+| Banana | 447 | 81.4% [77.6-84.8] | 0.809 [0.773-0.843] | 0.20 | 0.90 |
 | BananaImageBD part | 80 | 95.0% | 0.950 | 0.05 | 0.98 |
-| BananaID part | 220 | 82.3% | 0.816 | 0.20 | 0.90 |
-| Prata Catarina part | 147 | 73.5% | 0.706 | 0.27 | 0.82 |
-| Banana small in frame | 80 | 85.0% | 0.861 | 0.14 | 0.93 |
+| BananaID part | 220 | 82.7% | 0.821 | 0.19 | 0.90 |
+| Prata Catarina part | 147 | 72.1% | 0.695 | 0.29 | 0.81 |
+| Banana small in frame | 80 | 86.3% | 0.874 | 0.13 | 0.94 |
 | Banana cut off | 80 | 83.8% | 0.860 | 0.12 | 0.95 |
 | Banana new backgrounds | 160 | 90.0% | 0.901 | 0.11 | 0.95 |
 | Apple | 304 | 94.7% [91.6-96.7] | 0.933 | 0.05 | 0.97 |
-| Tomato, field | 418 | 93.3% [90.5-95.3] | 0.885 | 0.06 | 0.77 |
-| Tomato, ParsaVictor test | 721 | 88.8% [86.3-90.9] | 0.866 | 0.11 | 0.74 |
+| Tomato, field | 418 | 93.3% [90.5-95.3] | 0.888 | 0.06 | 0.78 |
+| Tomato, ParsaVictor test | 721 | 88.6% [86.1-90.7] | 0.865 | 0.11 | 0.74 |
 
-Fruit naming: 2,201 of 2,210 fruit photos right (99.6%); all 91 photos without
+Fruit naming: 2,199 of 2,210 fruit photos right (99.5%); all 91 photos without
 a supported fruit answered "none" or "unclear". Per-stage F1, banana: unripe
-0.87, turning 0.68, ripe 0.85, overripe 0.85; apple: immature 0.99,
+0.87, turning 0.67, ripe 0.84, overripe 0.86; apple: immature 0.99,
 semi-mature 0.87, mature 0.94.
 
 ### Against public models
 
-| Public model | Test | Theirs | Ours | Only ours right / only theirs right | p |
+| Public model | Test | Theirs | This model | Only this model right / only theirs right | p |
 | --- | --- | --- | --- | --- | --- |
-| Dhahlan2000/banana_ripeness_level_detection | banana 447, turning merged into ripe | 66.4% | 88.8% | 111 / 11 | 6e-22 |
-| TCleo/banana-maturity-mobile-vit-small | banana 447, turning merged into ripe | 68.5% | 88.8% | 110 / 19 | 9e-17 |
-| Reitk/banana-ripeness-classifier | banana 447 | 53.9% | 81.7% | 146 / 22 | 1e-23 |
-| aryap2/kematangan-pisang-vit-b-32 | banana 447 | 51.2% | 81.7% | 173 / 37 | 3e-22 |
-| Carlosmg23/fruit-ripeness-final | banana 447, turning merged into ripe | 49.0% | 88.8% | 194 / 16 | 5e-40 |
+| Dhahlan2000/banana_ripeness_level_detection | banana 447, turning merged into ripe | 66.4% | 89.0% | 112 / 11 | 3e-22 |
+| TCleo/banana-maturity-mobile-vit-small | banana 447, turning merged into ripe | 68.5% | 89.0% | 111 / 19 | 5e-17 |
+| Reitk/banana-ripeness-classifier | banana 447 | 53.9% | 81.4% | 146 / 23 | 4e-23 |
+| aryap2/kematangan-pisang-vit-b-32 | banana 447 | 51.2% | 81.4% | 172 / 37 | 5e-22 |
+| Carlosmg23/fruit-ripeness-final | banana 447, turning merged into ripe | 49.0% | 89.0% | 195 / 16 | 3e-40 |
 | Carlosmg23/fruit-ripeness-final | apple 304 | 32.2% | 94.7% | 193 / 3 | 3e-53 |
 | ParsaVictor/tomato-ripeness-classifier-yolo26s | tomato 418 | 89.5% | 93.3% | 36 / 20 | 0.044 |
-| ParsaVictor/tomato-ripeness-classifier-yolo26s | their test 721 | 88.6% | 88.8% | 31 / 30 | 1.0 |
-| deanza1000/tomato-ripeness-resnet | tomato 418 | 50.0% | 93.3% | 192 / 11 | 8e-44 |
+| ParsaVictor/tomato-ripeness-classifier-yolo26s | their test 721 | 88.6% | 88.6% | 31 / 31 | 1.0 |
+| deanza1000/tomato-ripeness-resnet | tomato 418 | 50.0% | 93.3% | 193 / 12 | 3e-43 |
 | afeefaazam/tomato-ripeness-detector | tomato 418 | 59.8% | 93.3% | 154 / 14 | 6e-31 |
-| dima806/fruit_vegetable_image_detection | fruit naming 1,169 | 64.7% | 99.9% | 412 / 0 | < 1e-40 |
+| dima806/fruit_vegetable_image_detection | fruit naming 1,169 | 64.7% | 99.8% | 411 / 0 | < 1e-40 |
 
-Two public banana models report 90-98% on their own validation photos; on our
+Two public banana models report 90-98% on their own validation photos; on my
 photos they score 51-54%. Accuracy on one dataset says little about photos
-from another, which is why every model here, ours included, is tested on
+from another, which is why every model here, mine included, is tested on
 several datasets.
 
 ## 6. Limitations
 
 - Three fruits; tomato has only two stages.
-- Banana "turning" (F1 0.68) and Prata Catarina photos (73.5%) are the weak
+- Banana "turning" (F1 0.67) and Prata Catarina photos (72.1%) are the weak
   spots. Stage boundaries differ between datasets.
 - Half-ripe tomatoes called "ready" are most of the remaining tomato errors.
 - Rejecting unsupported photos was tested on 91 photos only.
@@ -173,7 +177,7 @@ several datasets.
 ## 7. Reproducing
 
 Code, test lists (dataset-relative paths, crop boxes, SHA256 of every scored
-photo), our answer for every test photo, all metrics and the pre-test choices
+photo), my answer for every test photo, all metrics and the pre-test choices
 are in this repository. See README.md.
 
 ## Licences

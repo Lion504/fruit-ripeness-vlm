@@ -5,7 +5,7 @@ MODEL   = carlos | dhahlan | parsa | dima806 | aryap2 | reitk | tcleo | deanza |
 TESTSET = banana | apple | tomato | parsa_tomato_test | frame_small | frame_cut | bg_new2 | parsa_test
   (the last four read TEST_LISTS_DIR/<name>.jsonl; parsa_test = their 721 non-rotten test crops, label already
   not_yet/ready)
-Each output row: path, label (our label, or their class for parsa_tomato_test), source, raw (top class name),
+Each output row: path, label (the label, or their class for parsa_tomato_test), source, raw (top class name),
 conf (top probability), probs (class -> probability).
 afeef is a detector: raw = class of the highest-confidence box (conf >= 0.25, Ultralytics default) or 'unclear'
 if there is none; probs = best box confidence per class (boxes down to conf 0.05), n_boxes = boxes >= 0.25.
@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-# dataset paths come from RIPEWISE_TRAINING_DIR, BANANA_SPLITS and RIPEWISE_BANANA_DATASET (see code/qwen_tune/paths.py)
+# dataset paths come from RIPENESS_TRAINING_DIR, BANANA_SPLITS and RIPENESS_BANANA_DATASET (see code/qwen_tune/paths.py)
 sys.path.insert(0, str(REPO / "code" / "qwen_tune"))
 from paths import CROPS, SPLITS_CSV, banana_path  # noqa: E402
 from produce_common import TOMATO_MAP  # noqa: E402

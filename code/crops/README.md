@@ -12,7 +12,7 @@ cut from the original photos. These scripts make them:
 - `prep_lib.py`: shared steps: crop each fruit, group exact and near-duplicate
   source photos, split by group per class, write the CSV.
 
-Set `RIPEWISE_TRAINING_DIR` (see `paths.py`), `APPLE_DATASET_DIR` (the extracted apple dataset folder) and
+Set `RIPENESS_TRAINING_DIR` (see `paths.py`), `APPLE_DATASET_DIR` (the extracted apple dataset folder) and
 `TOMATO_DATASET_DIR` (the extracted OpenField-BD `tomato_m_f` folder); crops are written under
 `<training>/produce/crops/<fruit>/` with `train.csv`, `val.csv`, `test.csv`.
 The test lists in `../../test_sets/` give every test crop's source photo and box.

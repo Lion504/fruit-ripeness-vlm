@@ -1,3 +1,3 @@
-run,picks_file,picks_sha256,date,picks_written_seconds_before_first_test_result,test_result_files
-"clean rescoring (rounds 29-35, all add-ons)",picks_clean.json,48a166c6e2942fdcad132afad5c348949dad4cdb23cb5842c7cfdeb3a827da3b,2026-11-20,50,12
-round 36 tomato,picks_r36.json,aaba5f97c626a730d074a3851b7aea20bb34e9309909051caa7a031f8c96a58f,2026-11-20,57,4
+run,picks_file,picks_sha256,sha256_as_written_before_tests,date,picks_written_seconds_before_first_test_result,test_result_files,note
+"clean rescoring (rounds 29-35, all add-ons)",picks_clean.json,1ccc5048cd480bb9dce475a90192da25a26c7e891dff4806171ca5220c568a1a,48a166c6e2942fdcad132afad5c348949dad4cdb23cb5842c7cfdeb3a827da3b,2026-11-20,50,12,published copy: rule text reworded after the tests; epochs and scores unchanged
+round 36 tomato,picks_r36.json,d71860af04504f34d2f586af6dde6e08ebd25111abdbda4c388f481762bb44a1,aaba5f97c626a730d074a3851b7aea20bb34e9309909051caa7a031f8c96a58f,2026-11-20,57,4,published copy: rule text reworded after the tests; epochs and scores unchanged

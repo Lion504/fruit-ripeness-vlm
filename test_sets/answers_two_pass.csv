@@ -79,10 +79,10 @@ banana_test,BananaImageBD v2,Banana Ripeness Detection Dataset/Semi-ripe/Semi_ri
 banana_test,BananaImageBD v2,Banana Ripeness Detection Dataset/Semi-ripe/Semi_ripe_9.jpeg,,turning,banana,turning
 banana_test,BananaImageBD v2,Banana Ripeness Detection Dataset/Semi-ripe/Semi_ripe_94.jpg,,turning,banana,turning
 banana_test,BananaImageBD v2,Banana Ripeness Detection Dataset/Semi-ripe/Semi_ripe_95.jpg,,turning,banana,turning
-banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Dataset/Unripe/Cavendish_Unripe_Bottom_0007.jpg,,unripe,banana,unripe
+banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Dataset/Unripe/Cavendish_Unripe_Bottom_0007.jpg,,unripe,banana,turning
 banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Dataset/Unripe/Cavendish_Unripe_Left_0007.jpg,,unripe,banana,unripe
 banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Dataset/Unripe/Cavendish_Unripe_Right_0007.jpg,,unripe,banana,unripe
-banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Dataset/Unripe/Cavendish_Unripe_Top_0007.jpg,,unripe,banana,turning
+banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Dataset/Unripe/Cavendish_Unripe_Top_0007.jpg,,unripe,banana,unripe
 banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Dataset/Unripe/Cavendish_Unripe_Bottom_0014.jpg,,unripe,banana,unripe
 banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Dataset/Unripe/Cavendish_Unripe_Left_0014.jpg,,unripe,banana,unripe
 banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Dataset/Unripe/Cavendish_Unripe_Right_0014.jpg,,unripe,banana,unripe
@@ -258,7 +258,7 @@ banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Datase
 banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Dataset/Overripe/Cavendish_Overripe_Bottom_0014.jpg,,overripe,banana,ripe
 banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Dataset/Overripe/Cavendish_Overripe_Left_0014.jpg,,overripe,banana,ripe
 banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Dataset/Overripe/Cavendish_Overripe_Right_0014.jpg,,overripe,banana,overripe
-banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Dataset/Overripe/Cavendish_Overripe_Top_0014.jpg,,overripe,banana,ripe
+banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Dataset/Overripe/Cavendish_Overripe_Top_0014.jpg,,overripe,banana,overripe
 banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Dataset/Overripe/Cavendish_Overripe_Bottom_0019.jpg,,overripe,banana,overripe
 banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Dataset/Overripe/Cavendish_Overripe_Left_0019.jpg,,overripe,banana,overripe
 banana_test,BananaID (Mendeley h6n5srjjyw),Banana Ripeness Classification Dataset/Overripe/Cavendish_Overripe_Right_0019.jpg,,overripe,banana,overripe
@@ -334,7 +334,7 @@ banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_075444_jpg.rf.0
 banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_075652_jpg.rf.c22c7649b67e54689ebb56d3ab39a43c.jpg,annotation 0 (10% margin),unripe,banana,turning
 banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_075741_jpg.rf.67c75c002ca84c88c5c9874260a1125b.jpg,annotation 0 (10% margin),unripe,banana,unripe
 banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_075858_jpg.rf.ab2063cf124f260088aa9506bc0cbdfb.jpg,annotation 0 (10% margin),ripe,banana,ripe
-banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_075906_jpg.rf.4d93258e386d7511180d3905ad0fbc31.jpg,annotation 0 (10% margin),turning,banana,turning
+banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_075906_jpg.rf.4d93258e386d7511180d3905ad0fbc31.jpg,annotation 0 (10% margin),turning,banana,ripe
 banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_075907_jpg.rf.46e5cfb38601f9f81ed786b3073bd9a8.jpg,annotation 0 (10% margin),turning,banana,turning
 banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_080038_jpg.rf.9272ba9864d3778e305db03ec5415183.jpg,annotation 0 (10% margin),ripe,banana,ripe
 banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_080045_jpg.rf.153c177db4fe1af5d3fbe06bdb2c038e.jpg,annotation 0 (10% margin),ripe,banana,ripe
@@ -347,7 +347,7 @@ banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_080249_jpg.rf.e
 banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_080320_jpg.rf.2be78e4e07986896b8d6ff93ede054dd.jpg,annotation 0 (10% margin),ripe,banana,ripe
 banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_080406_jpg.rf.bc5ef4405ca50257db401e93c7362a33.jpg,annotation 0 (10% margin),ripe,banana,ripe
 banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_080442_jpg.rf.84fe43b95bb02c4c3c4a9b8ef302bfb7.jpg,annotation 0 (10% margin),ripe,banana,turning
-banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_080446_jpg.rf.052cd5565883be8428bfbbead2de3fc0.jpg,annotation 0 (10% margin),ripe,banana,ripe
+banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_080446_jpg.rf.052cd5565883be8428bfbbead2de3fc0.jpg,annotation 0 (10% margin),ripe,banana,turning
 banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_080534_jpg.rf.d88b4665c51030e3256a8ac220516b67.jpg,annotation 0 (10% margin),unripe,banana,unripe
 banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_080554_jpg.rf.2c1358b5d99cd459429b8317f97a4816.jpg,annotation 0 (10% margin),turning,banana,turning
 banana_test,Banana Prata Catarina (Mendeley 7vb4djkbrc),20230213_080757_jpg.rf.69adf1af9a7f6ecdf0e83f74276959af.jpg,annotation 0 (10% margin),overripe,banana,overripe
@@ -511,7 +511,7 @@ frame_small,robustness set (derived from BananaImageBD v2),framing_test/Semi-rip
 frame_small,robustness set (derived from BananaImageBD v2),framing_test/Semi-ripe_Semi_ripe_152.JPG_small.png,,turning,banana,turning
 frame_small,robustness set (derived from BananaImageBD v2),framing_test/Semi-ripe_Semi_ripe_170.JPG_small.png,,turning,banana,turning
 frame_small,robustness set (derived from BananaImageBD v2),framing_test/Semi-ripe_Semi_ripe_18_small.png,,turning,banana,turning
-frame_small,robustness set (derived from BananaImageBD v2),framing_test/Semi-ripe_Semi_ripe_190.JPG_small.png,,turning,banana,ripe
+frame_small,robustness set (derived from BananaImageBD v2),framing_test/Semi-ripe_Semi_ripe_190.JPG_small.png,,turning,banana,turning
 frame_small,robustness set (derived from BananaImageBD v2),framing_test/Semi-ripe_Semi_ripe_193.JPG_small.png,,turning,banana,turning
 frame_small,robustness set (derived from BananaImageBD v2),framing_test/Semi-ripe_Semi_ripe_197.JPG_small.png,,turning,banana,ripe
 frame_small,robustness set (derived from BananaImageBD v2),framing_test/Semi-ripe_Semi_ripe_24_small.png,,turning,banana,turning
@@ -1140,7 +1140,7 @@ tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/train/imag
 tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/train/images/IMG20260216101854.jpg,"1914,1947,2160,2230",not_yet,tomato,not_yet
 tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/train/images/IMG20260216101915.jpg,"767,1545,1579,2336",not_yet,tomato,not_yet
 tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/train/images/IMG20260216101922.jpg,"919,1371,1376,1877",not_yet,tomato,not_yet
-tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/train/images/IMG20260216101922.jpg,"1052,1093,1515,1726",not_yet,tomato,ready
+tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/train/images/IMG20260216101922.jpg,"1052,1093,1515,1726",not_yet,tomato,not_yet
 tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/train/images/IMG20260216101922.jpg,"406,1008,1030,1707",not_yet,tomato,ready
 tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/train/images/IMG20260216101922.jpg,"1280,939,1883,1615",ready,tomato,ready
 tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/train/images/IMG20260216101930.jpg,"1043,1839,1426,2230",not_yet,tomato,not_yet
@@ -1482,7 +1482,7 @@ tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/val/images
 tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/val/images/IMG_20260216_101841.jpg,"1746,813,2080,1226",not_yet,tomato,not_yet
 tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/val/images/IMG_20260216_101841.jpg,"1816,777,2541,1520",ready,tomato,ready
 tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/val/images/IMG_20260216_101841.jpg,"696,894,1393,1596",not_yet,tomato,not_yet
-tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/val/images/IMG_20260216_101841.jpg,"493,1576,825,1845",not_yet,tomato,not_yet
+tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/val/images/IMG_20260216_101841.jpg,"493,1576,825,1845",not_yet,apple,immature
 tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/val/images/IMG_20260216_102925.jpg,"991,991,2262,2273",ready,tomato,not_yet
 tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/val/images/IMG_20260216_102925.jpg,"604,1620,1494,2556",not_yet,tomato,not_yet
 tomato_test,OpenField-BD Tomato Maturity (Zenodo 20176021),tomato_m_f/val/images/IMG_20260216_103236.jpg,"1028,1259,1981,2217",ready,tomato,ready
@@ -1531,7 +1531,7 @@ tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_rip
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_ripe/def__dataset-1092-_jpg.rf.7c7568bbaa1ffaaca98ec2609d904fae_2.jpg,,not_yet,tomato,not_yet
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_ripe/def__dataset-1092-_jpg.rf.7c7568bbaa1ffaaca98ec2609d904fae_3.jpg,,not_yet,tomato,not_yet
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_ripe/def__dataset-1092-_jpg.rf.7c7568bbaa1ffaaca98ec2609d904fae_5.jpg,,not_yet,tomato,not_yet
-tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_ripe/def__dataset-1123-_jpg.rf.8557aa90df70f5a90d79a98c2a564932_0.jpg,,not_yet,tomato,not_yet
+tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_ripe/def__dataset-1123-_jpg.rf.8557aa90df70f5a90d79a98c2a564932_0.jpg,,not_yet,tomato,ready
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_ripe/def__dataset-1123-_jpg.rf.8557aa90df70f5a90d79a98c2a564932_1.jpg,,not_yet,tomato,not_yet
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_ripe/def__dataset-1123-_jpg.rf.8557aa90df70f5a90d79a98c2a564932_2.jpg,,not_yet,tomato,not_yet
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_ripe/def__dataset-1125-_jpg.rf.7c20122e9c5383e41949a677626a9da2_0.jpg,,not_yet,tomato,not_yet
@@ -1727,7 +1727,7 @@ tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_rip
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_ripe/def__dataset-511-_jpg.rf.bd9f128bde464c491cae7396ab10ab52_0.jpg,,not_yet,tomato,not_yet
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_ripe/def__dataset-520-_jpg.rf.19e27f36b4d5f745f6617cf57dd1b313_0.jpg,,not_yet,tomato,ready
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_ripe/def__dataset-520-_jpg.rf.19e27f36b4d5f745f6617cf57dd1b313_1.jpg,,not_yet,tomato,not_yet
-tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_ripe/def__dataset-520-_jpg.rf.19e27f36b4d5f745f6617cf57dd1b313_2.jpg,,not_yet,tomato,ready
+tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_ripe/def__dataset-520-_jpg.rf.19e27f36b4d5f745f6617cf57dd1b313_2.jpg,,not_yet,tomato,not_yet
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_ripe/def__dataset-54-_jpg.rf.49afdef9ebae46d3a2494af77d0b0dbd_10.jpg,,not_yet,tomato,not_yet
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_ripe/def__dataset-55-_jpg.rf.9a010c4cf305dd64114a37905cbfff45_11.jpg,,not_yet,tomato,not_yet
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/half_ripe/def__dataset-55-_jpg.rf.9a010c4cf305dd64114a37905cbfff45_12.jpg,,not_yet,tomato,not_yet
@@ -1924,7 +1924,7 @@ tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/raw/def_
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/raw/def__dataset-1420-_jpg.rf.3b9c0e3061ec8f83735d752634f7af24_8.jpg,,not_yet,tomato,not_yet
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/raw/def__dataset-1420-_jpg.rf.3b9c0e3061ec8f83735d752634f7af24_9.jpg,,not_yet,tomato,not_yet
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/raw/def__dataset-1436-_jpg.rf.3bada45db67ee432d8380fd747750cfa_0.jpg,,not_yet,tomato,not_yet
-tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/raw/def__dataset-1436-_jpg.rf.3bada45db67ee432d8380fd747750cfa_1.jpg,,not_yet,tomato,not_yet
+tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/raw/def__dataset-1436-_jpg.rf.3bada45db67ee432d8380fd747750cfa_1.jpg,,not_yet,apple,immature
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/raw/def__dataset-1436-_jpg.rf.3bada45db67ee432d8380fd747750cfa_2.jpg,,not_yet,banana,turning
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/raw/def__dataset-1436-_jpg.rf.3bada45db67ee432d8380fd747750cfa_3.jpg,,not_yet,tomato,not_yet
 tomato_parsa_test,ParsaVictor tomato_ripeness_crops.zip,cls_tomato/test/raw/def__dataset-1441-_jpg.rf.fedbf7770dfea4b5aea0e8ec2dcf71bc_1.jpg,,not_yet,tomato,not_yet

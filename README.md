@@ -5,13 +5,13 @@ Training code, test lists, per-photo answers and every metric for the
 that name the fruit (banana, apple, tomato, none, unclear) and then grade its
 ripeness stage, served with llama.cpp.
 
-| Test set | Photos | Two-pass accuracy | Best public model we tested |
+| Test set | Photos | Two-pass accuracy | Best public model I tested |
 | --- | --- | --- | --- |
-| Banana, 4 stages | 447 | 81.7% | 68.5% (3 stages only) |
+| Banana, 4 stages | 447 | 81.4% | 68.5% (3 stages only) |
 | Apple, 3 stages | 304 | 94.7% | 32.2% |
 | Tomato, field photos | 418 | 93.3% | 89.5% |
-| Tomato, ParsaVictor conveyor test | 721 | 88.8% | 88.6% (their own test set) |
-| Fruit naming | 2,210 | 99.6% | 64.7% (on 1,169) |
+| Tomato, ParsaVictor conveyor test | 721 | 88.6% | 88.6% (their own test set) |
+| Fruit naming | 2,210 | 99.5% | 64.7% (on 1,169) |
 
 The full write-up is in [REPORT.md](REPORT.md).
 
@@ -25,9 +25,9 @@ The full write-up is in [REPORT.md](REPORT.md).
 | `code/robustness/` | how the banana robustness test sets were made (the images themselves are not published) |
 | `code/eval/` | the two-pass test (`two_pass_v7.py`) and its scorer |
 | `code/metrics/` | `full_metrics.py`: accuracy with 95% range, balanced accuracy, per-stage and macro F1 with bootstrap range, MAE and MSE in stages, quadratic weighted kappa, confusion matrix |
-| `code/compare/` | running the public models on our test photos and the paired comparison; pinned model revisions in its README |
+| `code/compare/` | running the public models on my test photos and the paired comparison; pinned model revisions in its README |
 | `code/export_test_lists.py` | writes `test_sets/` from the local lists (dataset-relative paths only) |
-| `test_sets/` | every test photo: dataset, file (relative to the dataset), crop box where a crop was used, label, SHA256 of the photo we scored. `answers_two_pass.csv` has our answer for every photo; `test_negatives.csv` lists the 91 photos without a supported fruit by number and SHA256 (not published) |
+| `test_sets/` | every test photo: dataset, file (relative to the dataset), crop box where a crop was used, label, SHA256 of the photo I scored. `answers_two_pass.csv` has my answer for every photo; `test_negatives.csv` lists the 91 photos without a supported fruit by number and SHA256 (not published) |
 | `results/` | see below |
 
 `results/`:
@@ -36,9 +36,10 @@ The full write-up is in [REPORT.md](REPORT.md).
 | --- | --- |
 | `rounds_clean.csv` | every epoch of every round (29-35), validation and test, full metrics |
 | `rounds_clean_pass1.csv` | fruit-naming validation for every epoch |
-| `rounds_r36.csv` | final tomato round and the final two-pass run (`e2e_r36`, the numbers in the tables above) |
+| `rounds_r36.csv` | the final tomato round (validation and test) |
+| `final_two_pass.csv` | the final two-pass run: the numbers in the tables above |
 | `rounds_base.csv`, `fruit_naming.csv` | the plain model without add-ons; fruit naming, plain model vs the add-on |
-| `public_models_vs_ours.csv` | the 9 public models vs our two-pass answers on the same photos, with exact McNemar tests |
+| `public_models_vs_this_model.csv` | the 9 public models vs this model's two-pass answers on the same photos, with exact McNemar tests |
 | `compare.csv` | full metrics of the public models |
 | `picks_clean.json`, `picks_r36.json`, `picks_provenance.csv` | the epoch choices, made on validation only, with how many seconds before the first test result each was written |
 | `scoring_fault_check.csv` | answers changed by llama-server's prompt cache (see below) |
@@ -51,9 +52,12 @@ Run order:
    base model [Qwen/Qwen3.5-0.8B](https://huggingface.co/Qwen/Qwen3.5-0.8B).
 2. `pip install -r code/qwen_tune/requirements.txt`
 3. Set the paths (see the top of `code/qwen_tune/paths.py`):
-   `RIPEWISE_TRAINING_DIR`, `BANANA_SPLITS`, `RIPEWISE_BANANA_DATASET`,
-   `RIPEWISE_QWEN_BASE`, `RIPEWISE_LLAMA_CPP`. (RipeWise is the project's name;
-   it also appears in the trained prompts, which must be kept word for word.)
+   `RIPENESS_TRAINING_DIR`, `BANANA_SPLITS`, `RIPENESS_BANANA_DATASET`,
+   `RIPENESS_QWEN_BASE`, `RIPENESS_LLAMA_CPP`. The prompts in
+   `code/qwen_tune/v6_common.py` must be kept word for word. (The published
+   add-ons were trained with a first prompt sentence a few words longer; all
+   test numbers use the prompts in this file, and the change moved 11 of 2,301
+   test answers, none significantly.)
 4. Make the crops and splits: `code/crops/prep_apple_mendeley.py`,
    `code/crops/prep_tomato_openfield.py`, then the scripts in `code/data_prep/`
    (see its README for arguments and seeds).
@@ -81,13 +85,13 @@ Run order:
    the epoch, then run the tests once.
 7. Serve the four add-ons with `llama-server` and run `code/eval/two_pass_v7.py`
    and `code/eval/score_two_pass_v7.py`.
-8. Optional: `code/compare/predict.py` and `compare_with_ours.py` for the
+8. Optional: `code/compare/predict.py` and `compare_public_models.py` for the
    public-model comparison.
 
 **Important when scoring several add-ons on one llama-server:** send
 `"cache_prompt": false` (done in `v6_common.ask`). llama-server reuses the
 cached start of the prompt from the previous request even when that request
-used another add-on; in our tests this changed up to 16 of 447 answers
+used another add-on; in my tests this changed up to 16 of 447 answers
 (`results/scoring_fault_check.csv`).
 
 ## Licences
