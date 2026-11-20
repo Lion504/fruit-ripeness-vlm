@@ -1,0 +1,523 @@
+{
+ "note": "clean rescoring, prompt cache off; chosen on validation only, before any test was run; tie window 0.002 -> earlier epoch, then earlier round",
+ "per_round": {
+  "r30_banana": {
+   "rule": "best val macro F1",
+   "chosen": "r30-banana-ep7",
+   "epoch": 7,
+   "round": "r30",
+   "score": 0.8241,
+   "best_score": 0.8241,
+   "tied_within_0.002": [
+    "r30-banana-ep7"
+   ],
+   "table": {
+    "r30-banana-ep1": 0.7377,
+    "r30-banana-ep2": 0.7933,
+    "r30-banana-ep3": 0.8068,
+    "r30-banana-ep4": 0.8036,
+    "r30-banana-ep5": 0.7962,
+    "r30-banana-ep6": 0.8177,
+    "r30-banana-ep7": 0.8241,
+    "r30-banana-ep8": 0.8147
+   },
+   "earlier_choice_epoch": 7
+  },
+  "r31_banana": {
+   "rule": "best val macro F1",
+   "chosen": "r31-banana-ep6",
+   "epoch": 6,
+   "round": "r31",
+   "score": 0.8164,
+   "best_score": 0.8164,
+   "tied_within_0.002": [
+    "r31-banana-ep6"
+   ],
+   "table": {
+    "r31-banana-ep1": 0.7531,
+    "r31-banana-ep2": 0.7918,
+    "r31-banana-ep3": 0.7679,
+    "r31-banana-ep4": 0.7955,
+    "r31-banana-ep5": 0.8066,
+    "r31-banana-ep6": 0.8164,
+    "r31-banana-ep7": 0.8051,
+    "r31-banana-ep8": 0.8092
+   },
+   "earlier_choice_epoch": 6
+  },
+  "r34_banana": {
+   "rule": "best val macro F1",
+   "chosen": "r34-banana-ep10",
+   "epoch": 10,
+   "round": "r34",
+   "score": 0.8525,
+   "best_score": 0.8525,
+   "tied_within_0.002": [
+    "r34-banana-ep10"
+   ],
+   "table": {
+    "r34-banana-ep1": 0.773,
+    "r34-banana-ep2": 0.7895,
+    "r34-banana-ep3": 0.6758,
+    "r34-banana-ep4": 0.8203,
+    "r34-banana-ep5": 0.8002,
+    "r34-banana-ep6": 0.842,
+    "r34-banana-ep7": 0.8469,
+    "r34-banana-ep8": 0.8324,
+    "r34-banana-ep9": 0.8391,
+    "r34-banana-ep10": 0.8525
+   },
+   "earlier_choice_epoch": 7
+  },
+  "r35_banana": {
+   "rule": "best mean(val macro F1, val_small macro F1)",
+   "chosen": "r35-banana-ep10",
+   "epoch": 10,
+   "round": "r35",
+   "score": 0.7648,
+   "best_score": 0.7648,
+   "tied_within_0.002": [
+    "r35-banana-ep10"
+   ],
+   "table": {
+    "r35-banana-ep1": 0.6778,
+    "r35-banana-ep2": 0.7374,
+    "r35-banana-ep3": 0.6465,
+    "r35-banana-ep4": 0.7542,
+    "r35-banana-ep5": 0.7304,
+    "r35-banana-ep6": 0.7409,
+    "r35-banana-ep7": 0.7497,
+    "r35-banana-ep8": 0.7465,
+    "r35-banana-ep9": 0.7618,
+    "r35-banana-ep10": 0.7648
+   },
+   "earlier_choice_epoch": 4
+  },
+  "r31_tomato": {
+   "rule": "best mean(our val macro F1, val_parsa macro F1)",
+   "chosen": "r31-tomato-ep5",
+   "epoch": 5,
+   "round": "r31",
+   "score": 0.9009,
+   "best_score": 0.9009,
+   "tied_within_0.002": [
+    "r31-tomato-ep5"
+   ],
+   "table": {
+    "r31-tomato-ep1": 0.8915,
+    "r31-tomato-ep2": 0.8744,
+    "r31-tomato-ep3": 0.8786,
+    "r31-tomato-ep4": 0.8795,
+    "r31-tomato-ep5": 0.9009,
+    "r31-tomato-ep6": 0.8894,
+    "r31-tomato-ep7": 0.885,
+    "r31-tomato-ep8": 0.888
+   },
+   "earlier_choice_epoch": 5
+  },
+  "r32_tomato": {
+   "rule": "best mean(our val macro F1, val_parsa macro F1)",
+   "chosen": "r32-tomato-ep6",
+   "epoch": 6,
+   "round": "r32",
+   "score": 0.937,
+   "best_score": 0.937,
+   "tied_within_0.002": [
+    "r32-tomato-ep6"
+   ],
+   "table": {
+    "r32-tomato-ep1": 0.9246,
+    "r32-tomato-ep2": 0.9244,
+    "r32-tomato-ep3": 0.9083,
+    "r32-tomato-ep4": 0.9253,
+    "r32-tomato-ep5": 0.9259,
+    "r32-tomato-ep6": 0.937,
+    "r32-tomato-ep7": 0.9327,
+    "r32-tomato-ep8": 0.9339
+   },
+   "earlier_choice_epoch": 6
+  },
+  "r33_pass1": {
+   "rule": "best mean of the 3 group accuracies",
+   "chosen": "r33-pass1-ep4",
+   "epoch": 4,
+   "round": "r33",
+   "score": 0.9903,
+   "best_score": 0.9903,
+   "tied_within_0.002": [
+    "r33-pass1-ep4"
+   ],
+   "table": {
+    "r33-pass1-ep1": 0.9624,
+    "r33-pass1-ep2": 0.9801,
+    "r33-pass1-ep3": 0.9762,
+    "r33-pass1-ep4": 0.9903,
+    "r33-pass1-ep5": 0.9838,
+    "r33-pass1-ep6": 0.988
+   },
+   "earlier_choice_epoch": 4
+  }
+ },
+ "final": {
+  "banana": {
+   "rule": "best mean(val macro F1, val_small macro F1) over all banana candidates",
+   "chosen": "r35-banana-ep10",
+   "epoch": 10,
+   "round": "r35",
+   "score": 0.7648,
+   "best_score": 0.7648,
+   "tied_within_0.002": [
+    "r35-banana-ep10"
+   ],
+   "table": {
+    "r30-banana-ep1": 0.5628,
+    "r30-banana-ep2": 0.6671,
+    "r30-banana-ep3": 0.6569,
+    "r30-banana-ep4": 0.6451,
+    "r30-banana-ep5": 0.6383,
+    "r30-banana-ep6": 0.6607,
+    "r30-banana-ep7": 0.6564,
+    "r30-banana-ep8": 0.6493,
+    "r31-banana-ep1": 0.643,
+    "r31-banana-ep2": 0.734,
+    "r31-banana-ep3": 0.6502,
+    "r31-banana-ep4": 0.7205,
+    "r31-banana-ep5": 0.7202,
+    "r31-banana-ep6": 0.7441,
+    "r31-banana-ep7": 0.7341,
+    "r31-banana-ep8": 0.7409,
+    "r34-banana-ep1": 0.6172,
+    "r34-banana-ep2": 0.6448,
+    "r34-banana-ep3": 0.5615,
+    "r34-banana-ep4": 0.622,
+    "r34-banana-ep5": 0.5751,
+    "r34-banana-ep6": 0.5794,
+    "r34-banana-ep7": 0.5963,
+    "r34-banana-ep8": 0.5907,
+    "r34-banana-ep9": 0.5879,
+    "r34-banana-ep10": 0.5979,
+    "r35-banana-ep1": 0.6778,
+    "r35-banana-ep2": 0.7374,
+    "r35-banana-ep3": 0.6465,
+    "r35-banana-ep4": 0.7542,
+    "r35-banana-ep5": 0.7304,
+    "r35-banana-ep6": 0.7409,
+    "r35-banana-ep7": 0.7497,
+    "r35-banana-ep8": 0.7465,
+    "r35-banana-ep9": 0.7618,
+    "r35-banana-ep10": 0.7648,
+    "round29-banana-ep6": 0.5739
+   }
+  },
+  "tomato": {
+   "rule": "best mean(our val macro F1, val_parsa macro F1) over r31/r32 epochs + round29",
+   "chosen": "r32-tomato-ep6",
+   "epoch": 6,
+   "round": "r32",
+   "score": 0.937,
+   "best_score": 0.937,
+   "tied_within_0.002": [
+    "r32-tomato-ep6"
+   ],
+   "table": {
+    "r31-tomato-ep1": 0.8915,
+    "r31-tomato-ep2": 0.8744,
+    "r31-tomato-ep3": 0.8786,
+    "r31-tomato-ep4": 0.8795,
+    "r31-tomato-ep5": 0.9009,
+    "r31-tomato-ep6": 0.8894,
+    "r31-tomato-ep7": 0.885,
+    "r31-tomato-ep8": 0.888,
+    "r32-tomato-ep1": 0.9246,
+    "r32-tomato-ep2": 0.9244,
+    "r32-tomato-ep3": 0.9083,
+    "r32-tomato-ep4": 0.9253,
+    "r32-tomato-ep5": 0.9259,
+    "r32-tomato-ep6": 0.937,
+    "r32-tomato-ep7": 0.9327,
+    "r32-tomato-ep8": 0.9339,
+    "round29-tomato-ep5": 0.8824
+   }
+  },
+  "pass1": {
+   "rule": "best mean of the 3 group accuracies over r33 epochs + round29",
+   "chosen": "r33-pass1-ep4",
+   "epoch": 4,
+   "round": "r33",
+   "score": 0.9903,
+   "best_score": 0.9903,
+   "tied_within_0.002": [
+    "r33-pass1-ep4"
+   ],
+   "table": {
+    "r33-pass1-ep1": 0.9624,
+    "r33-pass1-ep2": 0.9801,
+    "r33-pass1-ep3": 0.9762,
+    "r33-pass1-ep4": 0.9903,
+    "r33-pass1-ep5": 0.9838,
+    "r33-pass1-ep6": 0.988,
+    "round29-pass1-ep4": 0.9303
+   }
+  }
+ },
+ "val_numbers": {
+  "r30-banana-ep1": {
+   "val_f1": 0.7377,
+   "val_small_f1": 0.3878
+  },
+  "r30-banana-ep2": {
+   "val_f1": 0.7933,
+   "val_small_f1": 0.5409
+  },
+  "r30-banana-ep3": {
+   "val_f1": 0.8068,
+   "val_small_f1": 0.507
+  },
+  "r30-banana-ep4": {
+   "val_f1": 0.8036,
+   "val_small_f1": 0.4865
+  },
+  "r30-banana-ep5": {
+   "val_f1": 0.7962,
+   "val_small_f1": 0.4805
+  },
+  "r30-banana-ep6": {
+   "val_f1": 0.8177,
+   "val_small_f1": 0.5036
+  },
+  "r30-banana-ep7": {
+   "val_f1": 0.8241,
+   "val_small_f1": 0.4887
+  },
+  "r30-banana-ep8": {
+   "val_f1": 0.8147,
+   "val_small_f1": 0.4839
+  },
+  "r31-banana-ep1": {
+   "val_f1": 0.7531,
+   "val_small_f1": 0.5328
+  },
+  "r31-banana-ep2": {
+   "val_f1": 0.7918,
+   "val_small_f1": 0.6761
+  },
+  "r31-banana-ep3": {
+   "val_f1": 0.7679,
+   "val_small_f1": 0.5325
+  },
+  "r31-banana-ep4": {
+   "val_f1": 0.7955,
+   "val_small_f1": 0.6455
+  },
+  "r31-banana-ep5": {
+   "val_f1": 0.8066,
+   "val_small_f1": 0.6339
+  },
+  "r31-banana-ep6": {
+   "val_f1": 0.8164,
+   "val_small_f1": 0.6717
+  },
+  "r31-banana-ep7": {
+   "val_f1": 0.8051,
+   "val_small_f1": 0.6632
+  },
+  "r31-banana-ep8": {
+   "val_f1": 0.8092,
+   "val_small_f1": 0.6725
+  },
+  "r34-banana-ep1": {
+   "val_f1": 0.773,
+   "val_small_f1": 0.4613
+  },
+  "r34-banana-ep2": {
+   "val_f1": 0.7895,
+   "val_small_f1": 0.5
+  },
+  "r34-banana-ep3": {
+   "val_f1": 0.6758,
+   "val_small_f1": 0.4472
+  },
+  "r34-banana-ep4": {
+   "val_f1": 0.8203,
+   "val_small_f1": 0.4238
+  },
+  "r34-banana-ep5": {
+   "val_f1": 0.8002,
+   "val_small_f1": 0.3501
+  },
+  "r34-banana-ep6": {
+   "val_f1": 0.842,
+   "val_small_f1": 0.3168
+  },
+  "r34-banana-ep7": {
+   "val_f1": 0.8469,
+   "val_small_f1": 0.3456
+  },
+  "r34-banana-ep8": {
+   "val_f1": 0.8324,
+   "val_small_f1": 0.3491
+  },
+  "r34-banana-ep9": {
+   "val_f1": 0.8391,
+   "val_small_f1": 0.3366
+  },
+  "r34-banana-ep10": {
+   "val_f1": 0.8525,
+   "val_small_f1": 0.3433
+  },
+  "r35-banana-ep1": {
+   "val_f1": 0.7438,
+   "val_small_f1": 0.6119
+  },
+  "r35-banana-ep2": {
+   "val_f1": 0.802,
+   "val_small_f1": 0.6729
+  },
+  "r35-banana-ep3": {
+   "val_f1": 0.7423,
+   "val_small_f1": 0.5506
+  },
+  "r35-banana-ep4": {
+   "val_f1": 0.8045,
+   "val_small_f1": 0.7039
+  },
+  "r35-banana-ep5": {
+   "val_f1": 0.7895,
+   "val_small_f1": 0.6712
+  },
+  "r35-banana-ep6": {
+   "val_f1": 0.8042,
+   "val_small_f1": 0.6775
+  },
+  "r35-banana-ep7": {
+   "val_f1": 0.8108,
+   "val_small_f1": 0.6887
+  },
+  "r35-banana-ep8": {
+   "val_f1": 0.8235,
+   "val_small_f1": 0.6695
+  },
+  "r35-banana-ep9": {
+   "val_f1": 0.8274,
+   "val_small_f1": 0.6963
+  },
+  "r35-banana-ep10": {
+   "val_f1": 0.836,
+   "val_small_f1": 0.6935
+  },
+  "round29-banana-ep6": {
+   "val_f1": 0.6866,
+   "val_small_f1": 0.4611
+  },
+  "r31-tomato-ep1": {
+   "val_f1": 0.8971,
+   "val_parsa_f1": 0.886
+  },
+  "r31-tomato-ep2": {
+   "val_f1": 0.885,
+   "val_parsa_f1": 0.8637
+  },
+  "r31-tomato-ep3": {
+   "val_f1": 0.8981,
+   "val_parsa_f1": 0.8591
+  },
+  "r31-tomato-ep4": {
+   "val_f1": 0.904,
+   "val_parsa_f1": 0.8551
+  },
+  "r31-tomato-ep5": {
+   "val_f1": 0.9169,
+   "val_parsa_f1": 0.885
+  },
+  "r31-tomato-ep6": {
+   "val_f1": 0.911,
+   "val_parsa_f1": 0.8679
+  },
+  "r31-tomato-ep7": {
+   "val_f1": 0.901,
+   "val_parsa_f1": 0.8691
+  },
+  "r31-tomato-ep8": {
+   "val_f1": 0.9072,
+   "val_parsa_f1": 0.8689
+  },
+  "r32-tomato-ep1": {
+   "val_f1": 0.9179,
+   "val_parsa_f1": 0.9313
+  },
+  "r32-tomato-ep2": {
+   "val_f1": 0.9282,
+   "val_parsa_f1": 0.9206
+  },
+  "r32-tomato-ep3": {
+   "val_f1": 0.8762,
+   "val_parsa_f1": 0.9403
+  },
+  "r32-tomato-ep4": {
+   "val_f1": 0.9124,
+   "val_parsa_f1": 0.9383
+  },
+  "r32-tomato-ep5": {
+   "val_f1": 0.9055,
+   "val_parsa_f1": 0.9462
+  },
+  "r32-tomato-ep6": {
+   "val_f1": 0.9297,
+   "val_parsa_f1": 0.9444
+  },
+  "r32-tomato-ep7": {
+   "val_f1": 0.9354,
+   "val_parsa_f1": 0.9301
+  },
+  "r32-tomato-ep8": {
+   "val_f1": 0.9239,
+   "val_parsa_f1": 0.9439
+  },
+  "round29-tomato-ep5": {
+   "val_f1": 0.9123,
+   "val_parsa_f1": 0.8525
+  },
+  "r33-pass1-ep1": {
+   "p1_val_r29": 0.9704,
+   "parsa_val300": 0.9167,
+   "banana_val_new": 1.0,
+   "mean": 0.9624
+  },
+  "r33-pass1-ep2": {
+   "p1_val_r29": 0.987,
+   "parsa_val300": 0.9533,
+   "banana_val_new": 1.0,
+   "mean": 0.9801
+  },
+  "r33-pass1-ep3": {
+   "p1_val_r29": 0.9752,
+   "parsa_val300": 0.9533,
+   "banana_val_new": 1.0,
+   "mean": 0.9762
+  },
+  "r33-pass1-ep4": {
+   "p1_val_r29": 0.9941,
+   "parsa_val300": 0.9767,
+   "banana_val_new": 1.0,
+   "mean": 0.9903
+  },
+  "r33-pass1-ep5": {
+   "p1_val_r29": 0.9882,
+   "parsa_val300": 0.9633,
+   "banana_val_new": 1.0,
+   "mean": 0.9838
+  },
+  "r33-pass1-ep6": {
+   "p1_val_r29": 0.9905,
+   "parsa_val300": 0.9733,
+   "banana_val_new": 1.0,
+   "mean": 0.988
+  },
+  "round29-pass1-ep4": {
+   "p1_val_r29": 0.9965,
+   "parsa_val300": 0.8,
+   "banana_val_new": 0.9946,
+   "mean": 0.9303
+  }
+ }
+}

@@ -1,0 +1,81 @@
+{
+ "note": "round 36 tomato add-on; clean scoring (cache_prompt false, full adapter list); chosen on validation only, before any test was run; tie window 0.002 -> earlier epoch",
+ "rule": "best mean(our tomato val macro F1 [416], ParsaVictor val1000 macro F1 [1000])",
+ "chosen": "r36-tomato-ep4",
+ "epoch": 4,
+ "score": 0.9058,
+ "best_score": 0.9073,
+ "tied_within_0002": [
+  "r36-tomato-ep4",
+  "r36-tomato-ep5"
+ ],
+ "reference": "r32-tomato-ep6",
+ "reference_score": 0.8983,
+ "adoption_rule": "adopt r36 if chosen epoch's mean val F1 > r32 ep6's on the same two val sets",
+ "adopted": true,
+ "table": {
+  "r36-tomato-ep1": {
+   "val_acc": 0.9495,
+   "val_f1": 0.9123,
+   "val_unclear": 0,
+   "parsa1000_acc": 0.831,
+   "parsa1000_f1": 0.8167,
+   "parsa1000_unclear": 0,
+   "mean_f1": 0.8645
+  },
+  "r36-tomato-ep2": {
+   "val_acc": 0.9543,
+   "val_f1": 0.9041,
+   "val_unclear": 0,
+   "parsa1000_acc": 0.904,
+   "parsa1000_f1": 0.8876,
+   "parsa1000_unclear": 0,
+   "mean_f1": 0.8959
+  },
+  "r36-tomato-ep3": {
+   "val_acc": 0.9519,
+   "val_f1": 0.9012,
+   "val_unclear": 0,
+   "parsa1000_acc": 0.892,
+   "parsa1000_f1": 0.8769,
+   "parsa1000_unclear": 0,
+   "mean_f1": 0.8891
+  },
+  "r36-tomato-ep4": {
+   "val_acc": 0.9615,
+   "val_f1": 0.9321,
+   "val_unclear": 0,
+   "parsa1000_acc": 0.893,
+   "parsa1000_f1": 0.8795,
+   "parsa1000_unclear": 0,
+   "mean_f1": 0.9058
+  },
+  "r36-tomato-ep5": {
+   "val_acc": 0.9591,
+   "val_f1": 0.922,
+   "val_unclear": 0,
+   "parsa1000_acc": 0.906,
+   "parsa1000_f1": 0.8925,
+   "parsa1000_unclear": 0,
+   "mean_f1": 0.9073
+  },
+  "r36-tomato-ep6": {
+   "val_acc": 0.9639,
+   "val_f1": 0.9345,
+   "val_unclear": 0,
+   "parsa1000_acc": 0.885,
+   "parsa1000_f1": 0.8712,
+   "parsa1000_unclear": 0,
+   "mean_f1": 0.9028
+  },
+  "r32-tomato-ep6": {
+   "val_acc": 0.9615,
+   "val_f1": 0.9297,
+   "val_unclear": 0,
+   "parsa1000_acc": 0.88,
+   "parsa1000_f1": 0.8669,
+   "parsa1000_unclear": 0,
+   "mean_f1": 0.8983
+  }
+ }
+}

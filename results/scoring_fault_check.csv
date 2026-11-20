@@ -1,0 +1,10 @@
+condition,photos,answers_different_from_reference
+round 29 banana add-on alone on the server (reference),447,0
+"straight after the round 30 add-on, prompt cache on",447,16
+"same order, earlier server run, prompt cache on",447,16
+"after the round 30 add-on, prompt cache off",447,0
+"round 30 add-on: second server run, cache on",447,0
+round 30 add-on: after a restart,447,0
+round 30 add-on: 3 add-ons loaded,447,0
+"round 30 add-on: other add-on used in between, cache off",447,0
+round 30 add-on: second in the add-on list,447,0
