@@ -15,6 +15,18 @@ ripeness stage, served with llama.cpp.
 
 The full write-up is in [REPORT.md](REPORT.md).
 
+## Intended use
+
+Grading the ripeness of a single banana, apple or tomato in a photo (offline
+apps, study and research). Not for food-safety or spoilage decisions, not for
+commercial grading (the add-ons are non-commercial), and not for other fruits.
+Details and limitations: the [model card](https://huggingface.co/timo6677/qwen3.5-0.8b-fruit-ripeness-lora).
+
+## How to cite
+
+See `CITATION.cff` (GitHub shows a "Cite this repository" button), and cite the
+datasets listed at the end of `REPORT.md`.
+
 ## What is here
 
 | Folder | Content |
