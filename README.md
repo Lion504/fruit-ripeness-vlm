@@ -1,5 +1,7 @@
 # Fruit ripeness grading with a 0.8B vision-language model
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24417897.svg)](https://doi.org/10.5281/zenodo.24417897)
+
 Training code, test lists, per-photo answers and every metric for the
 [fruit ripeness add-ons for Qwen3.5-0.8B](https://huggingface.co/timo6677/qwen3.5-0.8b-fruit-ripeness-lora): four small LoRA add-ons
 that name the fruit (banana, apple, tomato, none, unclear) and then grade its
@@ -24,7 +26,9 @@ Details and limitations: the [model card](https://huggingface.co/timo6677/qwen3.
 
 ## How to cite
 
-See `CITATION.cff` (GitHub shows a "Cite this repository" button), and cite the
+See `CITATION.cff` (GitHub shows a "Cite this repository" button). DOI for v1.0.0:
+[10.5281/zenodo.24417897](https://doi.org/10.5281/zenodo.24417897); all versions:
+[10.5281/zenodo.24417896](https://doi.org/10.5281/zenodo.24417896). Please also cite the
 datasets listed at the end of `REPORT.md`.
 
 ## What is here
