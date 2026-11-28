@@ -7,6 +7,8 @@ env:   RIPENESS_TRAINING_DIR, RIPENESS_BANANA_DATASET, RIPENESS_QWEN_BASE, HF_HO
        EXTRA_TRAIN=<csv> (round 32: extra train crops, columns path,label, added to the fruit's own train rows;
                           for pass1 the label is the fruit name)
        PARTIAL=1 (round 33: 15% of random crops keep only 40-75% of a side, so cut-off fruit is seen in training)
+       NEG_EXTRA=<csv> (round 39, pass1 only: extra "none" photos, columns path (any other columns ignored); every row is
+                        added once per epoch with label none and the normal augmentation. Unset = rounds 29-38 behaviour)
        OUT=<dir> (default qwen-tune/lora_v6/<fruit>)   SEED=0   MAX_SAMPLES=N (stop early; capacity tests)
 Recipe: all train crops (apple/tomato: truncated and small crops kept), augmentation (flip, small rotation with
 background-pool fill, random crop, brightness/contrast/saturation jitter, mild blur, 'unclear' samples made from
@@ -58,6 +60,7 @@ MAX_SAMPLES = int(env("MAX_SAMPLES", "0"))
 LOWRES = env("LOWRES", "0") == "1"  # round 31 small-fruit and low-resolution augmentation
 EXTRA_TRAIN = env("EXTRA_TRAIN", "")  # round 32: CSV (path,label) of extra train crops
 PARTIAL = env("PARTIAL", "0") == "1"  # round 33: 15% of random crops keep only 40-75% of a side
+NEG_EXTRA = env("NEG_EXTRA", "")  # round 39: CSV (path) of extra non-fruit photos, label none (pass1 only)
 QT = QWEN_DIR
 DEVICE = "cuda" if torch.cuda.is_available() else "mps"
 out = Path(env("OUT", str(QT / "lora_v6" / fruit)))
@@ -132,6 +135,8 @@ def load_rows():
         ]
         # unclear: darkened / heavily blurred fruit
         rows += [("dark:" + p, "unclear") for p, _ in rr.sample(rows[:3000], 400)]
+        if NEG_EXTRA:  # round 39: everyday objects, other produce, look-alikes (added after the unclear draw, so that draw is unchanged)
+            rows += [(r["path"], "none") for r in csv.DictReader(open(NEG_EXTRA))]
         return rows
     if fruit == "banana":
         rows = [(p, lbl) for p, lbl in load_split("train")]
@@ -376,6 +381,7 @@ json.dump(
         "lowres": LOWRES,
         "extra_train": EXTRA_TRAIN,
         "partial": PARTIAL,
+        "neg_extra": NEG_EXTRA,
     },
     open(out / "config.json", "w"),
 )

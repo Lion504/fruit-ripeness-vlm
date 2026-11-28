@@ -1,0 +1,36 @@
+model,group,n,correct,accuracy,confusion
+r39-pass1-ep1,p1_val_r29,846,808,0.9551,"{""apple"": {""apple"": 284, ""tomato"": 1, ""none"": 19}, ""banana"": {""banana"": 56, ""none"": 2}, ""none"": {""tomato"": 2, ""none"": 48}, ""tomato"": {""tomato"": 402, ""none"": 14}, ""unclear"": {""unclear"": 18}}"
+r39-pass1-ep1,parsa_val300,300,272,0.9067,"{""tomato"": {""tomato"": 272, ""none"": 28}}"
+r39-pass1-ep1,banana_val_new,370,370,1.0,"{""banana"": {""banana"": 370}}"
+r39-pass1-ep1,neg_r39_val,300,298,0.9933,"{""none"": {""apple"": 2, ""none"": 298}}"
+r39-pass1-ep1,fruit_naming_all3,1516,1450,0.9565,
+r39-pass1-ep2,p1_val_r29,846,826,0.9764,"{""apple"": {""apple"": 292, ""tomato"": 2, ""none"": 10}, ""banana"": {""banana"": 58}, ""none"": {""tomato"": 1, ""none"": 49}, ""tomato"": {""banana"": 2, ""tomato"": 409, ""none"": 5}, ""unclear"": {""unclear"": 18}}"
+r39-pass1-ep2,parsa_val300,300,282,0.94,"{""tomato"": {""tomato"": 282, ""none"": 18}}"
+r39-pass1-ep2,banana_val_new,370,370,1.0,"{""banana"": {""banana"": 370}}"
+r39-pass1-ep2,neg_r39_val,300,300,1.0,"{""none"": {""none"": 300}}"
+r39-pass1-ep2,fruit_naming_all3,1516,1478,0.9749,
+r39-pass1-ep3,p1_val_r29,846,838,0.9905,"{""apple"": {""apple"": 302, ""none"": 2}, ""banana"": {""banana"": 58}, ""none"": {""tomato"": 2, ""none"": 48}, ""tomato"": {""apple"": 2, ""tomato"": 412, ""none"": 2}, ""unclear"": {""unclear"": 18}}"
+r39-pass1-ep3,parsa_val300,300,292,0.9733,"{""tomato"": {""apple"": 1, ""tomato"": 292, ""none"": 7}}"
+r39-pass1-ep3,banana_val_new,370,370,1.0,"{""banana"": {""banana"": 370}}"
+r39-pass1-ep3,neg_r39_val,300,289,0.9633,"{""none"": {""banana"": 1, ""apple"": 8, ""tomato"": 2, ""none"": 289}}"
+r39-pass1-ep3,fruit_naming_all3,1516,1500,0.9894,
+r39-pass1-ep4,p1_val_r29,846,840,0.9929,"{""apple"": {""apple"": 304}, ""banana"": {""banana"": 58}, ""none"": {""tomato"": 2, ""none"": 48}, ""tomato"": {""banana"": 2, ""tomato"": 412, ""none"": 2}, ""unclear"": {""unclear"": 18}}"
+r39-pass1-ep4,parsa_val300,300,296,0.9867,"{""tomato"": {""tomato"": 296, ""none"": 4}}"
+r39-pass1-ep4,banana_val_new,370,370,1.0,"{""banana"": {""banana"": 370}}"
+r39-pass1-ep4,neg_r39_val,300,294,0.98,"{""none"": {""banana"": 1, ""apple"": 4, ""tomato"": 1, ""none"": 294}}"
+r39-pass1-ep4,fruit_naming_all3,1516,1506,0.9934,
+r39-pass1-ep5,p1_val_r29,846,841,0.9941,"{""apple"": {""apple"": 303, ""none"": 1}, ""banana"": {""banana"": 58}, ""none"": {""tomato"": 2, ""none"": 48}, ""tomato"": {""tomato"": 414, ""none"": 2}, ""unclear"": {""unclear"": 18}}"
+r39-pass1-ep5,parsa_val300,300,291,0.97,"{""tomato"": {""tomato"": 291, ""none"": 9}}"
+r39-pass1-ep5,banana_val_new,370,370,1.0,"{""banana"": {""banana"": 370}}"
+r39-pass1-ep5,neg_r39_val,300,297,0.99,"{""none"": {""banana"": 1, ""apple"": 1, ""tomato"": 1, ""none"": 297}}"
+r39-pass1-ep5,fruit_naming_all3,1516,1502,0.9908,
+r39-pass1-ep6,p1_val_r29,846,838,0.9905,"{""apple"": {""apple"": 300, ""tomato"": 1, ""none"": 3}, ""banana"": {""banana"": 58}, ""none"": {""tomato"": 1, ""none"": 49}, ""tomato"": {""banana"": 1, ""tomato"": 413, ""none"": 2}, ""unclear"": {""unclear"": 18}}"
+r39-pass1-ep6,parsa_val300,300,294,0.98,"{""tomato"": {""tomato"": 294, ""none"": 6}}"
+r39-pass1-ep6,banana_val_new,370,370,1.0,"{""banana"": {""banana"": 370}}"
+r39-pass1-ep6,neg_r39_val,300,298,0.9933,"{""none"": {""banana"": 1, ""tomato"": 1, ""none"": 298}}"
+r39-pass1-ep6,fruit_naming_all3,1516,1502,0.9908,
+round33-pass1-ep4,p1_val_r29,846,842,0.9953,"{""apple"": {""apple"": 303, ""tomato"": 1}, ""banana"": {""banana"": 58}, ""none"": {""none"": 50}, ""tomato"": {""banana"": 2, ""tomato"": 413, ""none"": 1}, ""unclear"": {""unclear"": 18}}"
+round33-pass1-ep4,parsa_val300,300,293,0.9767,"{""tomato"": {""tomato"": 293, ""none"": 7}}"
+round33-pass1-ep4,banana_val_new,370,370,1.0,"{""banana"": {""banana"": 370}}"
+round33-pass1-ep4,neg_r39_val,300,139,0.4633,"{""none"": {""banana"": 25, ""apple"": 36, ""tomato"": 100, ""none"": 139}}"
+round33-pass1-ep4,fruit_naming_all3,1516,1505,0.9927,

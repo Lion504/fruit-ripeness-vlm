@@ -10,12 +10,39 @@ ripeness stage, served with llama.cpp.
 | Test set | Photos | Two-pass accuracy | Best public model I tested |
 | --- | --- | --- | --- |
 | Banana, 4 stages | 447 | 81.4% | 68.5% (3 stages only) |
-| Apple, 3 stages | 304 | 94.7% | 32.2% |
-| Tomato, field photos | 418 | 93.3% | 89.5% |
-| Tomato, ParsaVictor conveyor test | 721 | 88.6% | 88.6% (their own test set) |
+| Apple, 3 stages | 304 | 94.4% | 32.2% |
+| Tomato, field photos | 418 | 93.8% | 89.5% |
+| Tomato, ParsaVictor conveyor test | 721 | 88.5% | 88.6% (their own test set) |
 | Fruit naming | 2,210 | 99.5% | 64.7% (on 1,169) |
+| Fruit naming, photos without a supported fruit (new test, round 39) | 300 | 99.7% | not tested |
 
 The full write-up is in [REPORT.md](REPORT.md).
+
+## Update, 28 November 2026 (round 39)
+
+The first fruit-naming add-on named everyday objects as a fruit: a photo of a
+desktop computer came back as "apple". The cause was in my training data: its
+"none" examples were only background patches cut from fruit photos and plain or
+noise images, so it had never seen an object or another fruit. I retrained it
+with 1,500 extra non-fruit photos (COCO 2017, Open Images V7, Fruits-360) as
+"none", added as the option `NEG_EXTRA` in `train_lora_v6.py` and built by
+`code/data_prep/build_neg_r39.py`. Epoch 6 was chosen on validation.
+
+On 300 new non-fruit test photos the answer "none" rose from 152 to 299 (a
+peach is still called "apple"). Fruit naming on the 2,210 fruit photos is
+unchanged at 2,199 right, with small shifts between sets (tomato 418 of 418
+instead of 416, apple 303 of 304 instead of 304, five cut-off bananas called
+"none" instead of one). The two-pass total is the same (1,961 right for both
+add-ons), but single sets move by 1 or 2 photos, so the apple, field-tomato and
+ParsaVictor numbers here and in REPORT.md changed by 0.1 to 0.5 points. On
+Hugging Face only `addons/fruit_naming.gguf` changed (model repo commit
+`e1474948ab85a440178421a6f8f1a44ae99edccf`, SHA-256
+`9ce7e32d37e5a78f6a3264be4ce8a405f3825ae3176b7dbe6a697518fcc011d4`).
+
+Limits: the new test photos come from the same three sources as the new
+training photos (different photos, same kind of data), so 99.7% will not hold
+for every real photo. I did not confirm the licence of the COCO annotations on
+the terms page, so I used the licence of each photo.
 
 ## Intended use
 
@@ -35,15 +62,15 @@ datasets listed at the end of `REPORT.md`.
 
 | Folder | Content |
 | --- | --- |
-| `code/qwen_tune/` | LoRA training (`train_lora_v6.py`), prompts and request code (`v6_common.py`), stage scorer, fruit-naming scorer, GGUF conversion |
+| `code/qwen_tune/` | LoRA training (`train_lora_v6.py`, with `NEG_EXTRA` for extra non-fruit photos), prompts and request code (`v6_common.py`), stage scorer, fruit-naming scorer, GGUF conversion |
 | `code/crops/` | cutting the apple and tomato fruit crops from the original photos |
-| `code/data_prep/` | the banana split file, the ParsaVictor train and validation samples with the near-copy filter, the small-in-frame validation set |
+| `code/data_prep/` | the banana split file, the ParsaVictor train and validation samples with the near-copy filter, the small-in-frame validation set, the non-fruit photos for fruit naming (`build_neg_r39.py`) and their test list (`export_nonfruit_r39_list.py`) |
 | `code/robustness/` | how the banana robustness test sets were made (the images themselves are not published) |
 | `code/eval/` | the two-pass test (`two_pass_v7.py`) and its scorer |
 | `code/metrics/` | `full_metrics.py`: accuracy with 95% range, balanced accuracy, per-stage and macro F1 with bootstrap range, MAE and MSE in stages, quadratic weighted kappa, confusion matrix |
 | `code/compare/` | running the public models on my test photos and the paired comparison; pinned model revisions in its README |
 | `code/export_test_lists.py` | writes `test_sets/` from the local lists (dataset-relative paths only) |
-| `test_sets/` | every test photo: dataset, file (relative to the dataset), crop box where a crop was used, label, SHA256 of the photo I scored. `answers_two_pass.csv` has my answer for every photo; `test_negatives.csv` lists the 91 photos without a supported fruit by number and SHA256 (not published) |
+| `test_sets/` | every test photo: dataset, file (relative to the dataset), crop box where a crop was used, label, SHA256 of the photo I scored. `answers_two_pass.csv` has my answer for every photo; `test_negatives.csv` lists the 91 photos without a supported fruit by number and SHA256 (not published). `test_nonfruit_r39.csv` lists the 300 new non-fruit test photos (source dataset, photo id, object box, licence of the photo, SHA256, my answers with the old and the new naming add-on) |
 | `results/` | see below |
 
 `results/`:
@@ -53,9 +80,10 @@ datasets listed at the end of `REPORT.md`.
 | `rounds_clean.csv` | every epoch of every round (29-35), validation and test, full metrics |
 | `rounds_clean_pass1.csv` | fruit-naming validation for every epoch |
 | `rounds_r36.csv` | the final tomato round (validation and test) |
-| `final_two_pass.csv` | the final two-pass run: the numbers in the tables above |
-| `rounds_base.csv`, `fruit_naming.csv` | the plain model without add-ons; fruit naming, plain model vs the add-on |
-| `public_models_vs_this_model.csv` | the 9 public models vs this model's two-pass answers on the same photos, with exact McNemar tests |
+| `final_two_pass.csv` | the final two-pass run (fruit naming round 39): the numbers in the tables above |
+| `rounds_r39_pass1.csv`, `rounds_e2e_r39.csv` | round 39: fruit-naming validation for every epoch (and the 300 non-fruit validation photos); the two-pass run with the round 33 and the round 39 naming add-on side by side |
+| `rounds_base.csv`, `fruit_naming.csv` | the plain model without add-ons; fruit naming, plain model vs the add-ons (rounds 33 and 39) |
+| `public_models_vs_this_model.csv` | the 9 public models vs this model's two-pass answers (fruit naming round 39) on the same photos, with exact McNemar tests |
 | `compare.csv` | full metrics of the public models |
 | `picks_clean.json`, `picks_r36.json`, `picks_provenance.csv` | the epoch choices, made on validation only, with how many seconds before the first test result each was written |
 | `scoring_fault_check.csv` | answers changed by llama-server's prompt cache (see below) |
@@ -76,7 +104,9 @@ Run order:
    test answers, none significantly.)
 4. Make the crops and splits: `code/crops/prep_apple_mendeley.py`,
    `code/crops/prep_tomato_openfield.py`, then the scripts in `code/data_prep/`
-   (see its README for arguments and seeds).
+   (see its README for arguments and seeds). For fruit naming also run
+   `code/data_prep/build_neg_r39.py` (non-fruit photos, needs the COCO 2017 and
+   Open Images V7 files and Fruits-360, see the top of the script).
 5. Train each add-on and convert it to GGUF, for example the final tomato add-on:
 
    ```bash
@@ -89,14 +119,16 @@ Run order:
 
    | Add-on | Settings | Epoch |
    | --- | --- | --- |
-   | Fruit naming | `pass1`, LOWRES=1 PARTIAL=1 EPOCHS=6, 1,200 ParsaVictor crops as EXTRA_TRAIN | 4 |
+   | Fruit naming | `pass1`, LOWRES=1 PARTIAL=1 EPOCHS=6, 1,200 ParsaVictor crops as EXTRA_TRAIN, 1,500 non-fruit photos as NEG_EXTRA (`neg_train_r39.csv`, column `path`) | 6 |
    | Banana | RANK=32 LOWRES=1 EPOCHS=10 | 10 |
    | Apple | defaults, EPOCHS=8 | 6 |
    | Tomato | LOWRES=1 EPOCHS=6, 6,000 ParsaVictor crops as EXTRA_TRAIN | 4 |
 
    The fruit-naming training set (fruit photos, background patches and
-   generated images as "none", darkened or blurred fruit as "unclear") is built
-   inside `train_lora_v6.py` (`load_rows`).
+   generated images as "none", darkened or blurred fruit as "unclear", and with
+   `NEG_EXTRA` the 1,500 extra non-fruit photos as "none") is built inside
+   `train_lora_v6.py` (`load_rows`). The first release (round 33, epoch 4) was
+   trained without `NEG_EXTRA`.
 6. Score every epoch on validation (`score_stage_v6.py`, `pass1_v6.py`), choose
    the epoch, then run the tests once.
 7. Serve the four add-ons with `llama-server` and run `code/eval/two_pass_v7.py`
@@ -115,4 +147,6 @@ used another add-on; in my tests this changed up to 16 of 447 answers
 - Code: Apache 2.0 (`LICENSE`). To cite this work, see `CITATION.cff`.
 - Add-ons: CC BY-NC 4.0 (the apple training data is marked non-commercial).
 - Test lists point to the original datasets; no dataset photos are included.
-  Dataset licences and citations are in REPORT.md.
+  Dataset licences and citations are in REPORT.md. The non-fruit photos used
+  for fruit naming are CC BY, CC BY-SA, CC BY-NC and CC BY-NC-SA licensed
+  photos from COCO, Open Images and Fruits-360 (licence per photo in the test list).
