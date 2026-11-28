@@ -1,6 +1,6 @@
 # Fruit ripeness grading with a 0.8B vision-language model
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24417897.svg)](https://doi.org/10.5281/zenodo.24417897)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24417896.svg)](https://doi.org/10.5281/zenodo.24417896)
 
 Training code, test lists, per-photo answers and every metric for the
 [fruit ripeness add-ons for Qwen3.5-0.8B](https://huggingface.co/timo6677/qwen3.5-0.8b-fruit-ripeness-lora): four small LoRA add-ons
@@ -53,9 +53,11 @@ Details and limitations: the [model card](https://huggingface.co/timo6677/qwen3.
 
 ## How to cite
 
-See `CITATION.cff` (GitHub shows a "Cite this repository" button). DOI for v1.0.0:
-[10.5281/zenodo.24417897](https://doi.org/10.5281/zenodo.24417897); all versions:
-[10.5281/zenodo.24417896](https://doi.org/10.5281/zenodo.24417896). Please also cite the
+See `CITATION.cff` (GitHub shows a "Cite this repository" button). The current
+version is v1.0.1 (28 November 2026, retrained fruit-naming add-on). DOI for all
+versions, which always points to the newest one:
+[10.5281/zenodo.24417896](https://doi.org/10.5281/zenodo.24417896); DOI for v1.0.0:
+[10.5281/zenodo.24417897](https://doi.org/10.5281/zenodo.24417897). Please also cite the
 datasets listed at the end of `REPORT.md`.
 
 ## What is here
@@ -150,3 +152,11 @@ used another add-on; in my tests this changed up to 16 of 447 answers
   Dataset licences and citations are in REPORT.md. The non-fruit photos used
   for fruit naming are CC BY, CC BY-SA, CC BY-NC and CC BY-NC-SA licensed
   photos from COCO, Open Images and Fruits-360 (licence per photo in the test list).
+- Licence mix of the 1,500 non-fruit training photos (round 39): 1,117 are
+  CC BY, 77 CC BY-NC, 140 CC BY-SA (51 from COCO, 89 from Fruits-360) and 166
+  CC BY-NC-SA. No photo is included in this repository or in the add-on file.
+  Whether a trained add-on counts as an adaptation of its training photos is
+  not settled, and I am not a lawyer. If it does, the ShareAlike terms of those
+  306 photos would not fit CC BY-NC 4.0. The add-on stays CC BY-NC 4.0 for now;
+  a retrain without the 306 ShareAlike photos would remove the question and
+  has not been done.

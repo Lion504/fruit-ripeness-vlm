@@ -7,16 +7,16 @@ authors:
 license: Apache-2.0
 repository-code: "https://github.com/Lion504/fruit-ripeness-vlm"
 url: "https://huggingface.co/timo6677/qwen3.5-0.8b-fruit-ripeness-lora"
-version: "v1.0.0"
-doi: 10.5281/zenodo.24417897
+version: "v1.0.1"
+doi: 10.5281/zenodo.24417896
 identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24417896
+    description: "All versions (points to the newest)"
   - type: doi
     value: 10.5281/zenodo.24417897
     description: "v1.0.0"
-  - type: doi
-    value: 10.5281/zenodo.24417896
-    description: "All versions"
-date-released: "2026-11-21"
+date-released: "2026-11-28"
 keywords:
   - fruit ripeness
   - vision-language model
