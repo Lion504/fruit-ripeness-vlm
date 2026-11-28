@@ -56,7 +56,8 @@ Details and limitations: the [model card](https://huggingface.co/timo6677/qwen3.
 See `CITATION.cff` (GitHub shows a "Cite this repository" button). The current
 version is v1.0.1 (28 November 2026, retrained fruit-naming add-on). DOI for all
 versions, which always points to the newest one:
-[10.5281/zenodo.24417896](https://doi.org/10.5281/zenodo.24417896); DOI for v1.0.0:
+[10.5281/zenodo.24417896](https://doi.org/10.5281/zenodo.24417896); DOI for v1.0.1:
+[10.5281/zenodo.24626620](https://doi.org/10.5281/zenodo.24626620); DOI for v1.0.0:
 [10.5281/zenodo.24417897](https://doi.org/10.5281/zenodo.24417897). Please also cite the
 datasets listed at the end of `REPORT.md`.
 
