@@ -1,7 +1,7 @@
 """Export the new non-fruit test list (round 39) with paths relative to each public source dataset.
 
 usage: export_nonfruit_r39_list.py MANIFEST IMG_ROOT RESULTS_NEW RESULTS_PREV OUT_CSV [SPLIT]
-MANIFEST      manifest_r39.csv written by code/qwen_tune/build_neg_r39.py
+MANIFEST      manifest_r39.csv written by code/data_prep/build_neg_r39.py
 IMG_ROOT      the folder with the built photos (IMG_ROOT/<split>/<name>.jpg), used for the SHA-256
 RESULTS_NEW   results_*.jsonl of the fruit-naming test with the retrained add-on (rows of the set neg_r39_test)
 RESULTS_PREV  the same for the add-on without the extra non-fruit photos

@@ -39,7 +39,7 @@ the four add-ons, the whole system is about 810 MB and answers a photo in about
 | Apple | Multi-Stage Apple Dataset (Mendeley gfcmdbvw65 v4), crops from the masks | CC BY 4.0 on the record, CC BY-NC 4.0 in the article | train / val / test |
 | Tomato | OpenField-BD Tomato Maturity (Zenodo 20176021); green and half-ripe = not_yet, fully ripe = ready | CC BY 4.0 | train / val / test |
 | Tomato | ParsaVictor tomato ripeness crops (160 px conveyor crops); raw and half_ripe = not_yet, ripe = ready, rotten left out | CC BY 4.0 | their train split for training, their valid split for validation, their test split for testing |
-| None (fruit naming only) | COCO 2017, validation images (cocodataset.org); objects such as laptops, cups, chairs, people, animals, cars, balls, plus oranges, broccoli and carrots, cropped to the object box with a 10% margin, and whole scenes. Photos with an apple, banana or food box were left out, and photos with a NoDerivs licence | licence of each photo: CC BY 2.0, CC BY-SA 2.0, CC BY-NC 2.0 or CC BY-NC-SA 2.0 (I did not confirm the licence of the annotations on the terms page) | 380 train / 75 validation / 73 test |
+| None (fruit naming only) | COCO 2017, validation images (cocodataset.org); objects such as laptops, cups, chairs, people, animals, cars, balls, plus oranges, broccoli and carrots, cropped to the object box with a 10% margin, and whole scenes. Photos with an apple, banana or food box were left out, and photos with a NoDerivs licence | licence of each photo: CC BY 2.0, CC BY-SA 2.0, CC BY-NC 2.0 or CC BY-NC-SA 2.0 (the COCO annotations themselves are CC BY 4.0, COCO terms of use) | 380 train / 75 validation / 73 test |
 | None (fruit naming only) | Open Images V7, validation and test image sets; other produce (grape, grapefruit, cucumber, pumpkin, pineapple, strawberry, pear, peach, lemon and others), objects, people, animals. Photos labelled apple, banana, tomato, salad, pizza, sandwich, hot dog or cake were left out | only photos whose own licence is CC BY 2.0; annotations CC BY 4.0 | 1,031 / 207 / 209 |
 | None (fruit naming only) | Fruits-360, 100x100 images; other fruit and vegetable varieties on a white background (folders named apple, banana or tomato left out) | CC BY-SA 4.0 | 89 / 18 / 18 |
 
@@ -187,7 +187,7 @@ people 20/27 then 27/27, shoes and toys 19/27 then 27/27, animals and cars
 148 misses "tomato", 47 "apple" and 14 "banana". The one round 39 miss is a
 peach called "apple". The desktop-computer photo is now answered "none".
 
-The two-pass system with the stage add-ons unchanged got 1,961 of 2,301 photos
+The two-pass system with the stage add-ons unchanged got 1,961 of the 2,210 fruit photos (88.7%)
 right end to end with both naming add-ons (apple 288 then 287, banana cut off
 67 then 66, banana small in frame 69 then 70, field tomato 390 then 392,
 ParsaVictor 639 then 638, banana test and new backgrounds equal). The tables in
@@ -231,8 +231,10 @@ several datasets.
   searched for separately.
 - With the round 39 naming add-on, partly cut-off bananas are more often
   answered "none" (5 of 80 against 1 of 80).
-- The licence of the COCO annotations was not confirmed on the terms page; the
-  licence of each COCO photo (from the dataset's own list) was used.
+- The COCO annotations are CC BY 4.0 (COCO terms of use). Each COCO photo keeps
+  its own Flickr licence (from the dataset's own list), which is the one recorded.
+- The 300 non-fruit test photos are 300 crops from 299 different images: one
+  Open Images crop is listed twice, as "laptop" and as "tablet computer".
 - Test photos come from public datasets, not from shop or kitchen phone photos.
 
 ## 7. Reproducing

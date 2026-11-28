@@ -32,17 +32,19 @@ On 300 new non-fruit test photos the answer "none" rose from 152 to 299 (a
 peach is still called "apple"). Fruit naming on the 2,210 fruit photos is
 unchanged at 2,199 right, with small shifts between sets (tomato 418 of 418
 instead of 416, apple 303 of 304 instead of 304, five cut-off bananas called
-"none" instead of one). The two-pass total is the same (1,961 right for both
-add-ons), but single sets move by 1 or 2 photos, so the apple, field-tomato and
-ParsaVictor numbers here and in REPORT.md changed by 0.1 to 0.5 points. On
+"none" instead of one). The two-pass total over the 2,210 fruit photos is the same (1,961 right
+for both add-ons), but single sets move by 1 or 2 photos, so the apple, field-tomato and
+ParsaVictor numbers here and in REPORT.md changed by 0.1 to 0.5 points. The two small banana
+robustness sets (80 photos each) moved by one photo each: small in the frame
+69 to 70 right (86.3% to 87.5%), partly cut off 67 to 66 right (83.8% to 82.5%). On
 Hugging Face only `addons/fruit_naming.gguf` changed (model repo commit
 `e1474948ab85a440178421a6f8f1a44ae99edccf`, SHA-256
 `9ce7e32d37e5a78f6a3264be4ce8a405f3825ae3176b7dbe6a697518fcc011d4`).
 
 Limits: the new test photos come from the same three sources as the new
 training photos (different photos, same kind of data), so 99.7% will not hold
-for every real photo. I did not confirm the licence of the COCO annotations on
-the terms page, so I used the licence of each photo.
+for every real photo. The COCO annotations are CC BY 4.0 (COCO terms of use); each COCO photo keeps
+its own Flickr licence, which is the one I recorded per photo.
 
 ## Intended use
 
@@ -122,7 +124,7 @@ Run order:
 
    | Add-on | Settings | Epoch |
    | --- | --- | --- |
-   | Fruit naming | `pass1`, LOWRES=1 PARTIAL=1 EPOCHS=6, 1,200 ParsaVictor crops as EXTRA_TRAIN, 1,500 non-fruit photos as NEG_EXTRA (`neg_train_r39.csv`, column `path`) | 6 |
+   | Fruit naming | `pass1`, LOWRES=1 PARTIAL=1 EPOCHS=6, 1,200 ParsaVictor crops as EXTRA_TRAIN, 1,500 non-fruit photos as NEG_EXTRA (`neg_train_r39.csv`: the `train` rows of `manifest_r39.csv`, see `code/data_prep/README.md`) | 6 |
    | Banana | RANK=32 LOWRES=1 EPOCHS=10 | 10 |
    | Apple | defaults, EPOCHS=8 | 6 |
    | Tomato | LOWRES=1 EPOCHS=6, 6,000 ParsaVictor crops as EXTRA_TRAIN | 4 |

@@ -5,8 +5,8 @@ Writes ROOT/img/<split>/<name>.jpg (long side <= 512) and ROOT/manifest_r39.csv
 (columns: split,path,category,group,source,source_id,licence,author,box).
 
 Sources (all open, official hosts): COCO 2017 val (image licences per photo from the dataset's own list, photos with a
-NoDerivs licence are skipped because they are cropped; the licence of the COCO annotations was not confirmed from the
-terms page), Open Images validation and test sets (only photos whose own licence is CC BY 2.0; annotations CC BY 4.0),
+NoDerivs licence are skipped because they are cropped; the COCO annotations are CC BY 4.0, COCO terms
+of use), Open Images validation and test sets (only photos whose own licence is CC BY 2.0; annotations CC BY 4.0),
 Fruits-360 100x100 (CC BY-SA 4.0; split by fruit variant folder).
 Rules: no photo that carries an apple, banana or tomato label (or a food scene where tomatoes are likely) is used; all
 crops of one source photo go to one split (hash of the photo id); crops use the object box plus a 10% margin.
