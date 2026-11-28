@@ -168,6 +168,8 @@ photos as "none" (`NEG_EXTRA`), and chose the epoch on validation before any
 test: among the epochs whose fruit naming on the three existing validation
 groups (1,516 photos) was within 0.5 points of round 33, the one with most of
 the 300 non-fruit validation photos right (epoch 6, 298 of 300; round 33: 139).
+Epoch 2 had all 300 right but was not eligible: its fruit naming was 1,478 of
+1,516, 1.8 points below round 33 (1,505).
 The test was run once.
 
 | Fruit-naming test | Round 33 (first release) | Round 39 |
@@ -233,7 +235,8 @@ several datasets.
   answered "none" (5 of 80 against 1 of 80).
 - The COCO annotations are CC BY 4.0 (COCO terms of use). Each COCO photo keeps
   its own Flickr licence (from the dataset's own list), which is the one recorded.
-- The 300 non-fruit test photos are 300 crops from 299 different images: one
+- The 300 non-fruit test photos are 300 crops from 292 source photos (eight
+  photos give two crops each). 299 of the crops are different image files: one
   Open Images crop is listed twice, as "laptop" and as "tablet computer".
 - Test photos come from public datasets, not from shop or kitchen phone photos.
 
@@ -248,7 +251,8 @@ are in this repository. See README.md.
 Add-ons CC BY-NC 4.0 (the apple data is marked non-commercial in its article;
 the non-fruit photos used for fruit naming are CC BY, CC BY-SA, CC BY-NC and
 CC BY-NC-SA photos, licence per photo in `test_sets/test_nonfruit_r39.csv` and
-in the manifest written by `code/data_prep/build_neg_r39.py`);
+in the manifest written by `code/data_prep/build_neg_r39.py` when the set is
+rebuilt; the manifest itself is not in this repository);
 code Apache 2.0; base model Qwen3.5-0.8B Apache 2.0; datasets as listed in
 section 2.
 
